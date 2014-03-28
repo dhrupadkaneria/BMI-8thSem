@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Stage One - Template One</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/storetodb.js"></script>
+	<script src="js/getfromdb.js"></script>
+	
+	<style type="text/css">
+	img
+	{
+		height:500px;
+		width:1366px;
+	}
+	textarea
+	{
+		resize:none;
+	}
+	div.carousel-caption
+	{
+		position:absolute;
+		top:15%;
+	}
+	.navbar-default 
+	{
+		background-color: aqua;
+		border-color: aqua;
+	}
+	.navbar-default .navbar-brand 
+	{
+		color: #777777;
+	}
+	</style>
+	
+	<script type="text/javascript">
+		var count = 1131;
+		function addtext()
+		{
+			if(count < 1140)
+			{
+				var mytext = document.getElementById('1131');
+				count++;
+				var newtext = document.createElement('input');
+				newtext.type = 'text';
+				newtext.id = ''+count;
+				var newbr = document.createElement('br')
+				mytext.appendChild(newbr);
+				mytext.appendChild(newtext);
+			}
+			else
+			{
+				alert("Maximum Limit Reached !!");
+			}
+		}
+		function removetext()
+		{
+			if(count > 1131)
+			{
+				var mytext = document.getElementById('1131');
+				mytext.removeChild(mytext.lastChild);
+				mytext.removeChild(mytext.lastChild);
+				count--;
+			}
+			else
+			{
+				alert("Minimum Limit Reached !!");
+			}
+		}
+		var myid = 111;
+		function set1()
+		{
+			myid = 111;
+			getfromdb();
+		}
+		function set2()
+		{
+			myid = 112;
+			getfromdb();
+		}
+	</script>
+</head>
+
+<body>
+   
+	<!-- Fixes Navigation Bar
+    ======================================================-->
+    
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">Home</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+					<li><a href="getstarted.html">Get Started</a></li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 1 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stageonepointone.html">Template 1 - Understand</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagetwopointone.html">Template 1 - Identify</a></li>
+                            <li><a href="stagetwopointtwo.html">Template 2 - Problem Selection</a></li>
+                            <li><a href="stagetwopointthree.html">Template 3 - Problem Description</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagethreepointone.html">Template 1 - Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagefourpointone.html">Template 1 - Idea Selection</a></li>
+                            <li><a href="stagefourpointtwo.html">Template 2 - Idea Description</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagefivepointone.html">Template 1 - Types of Business Model</a></li>
+                            <li><a href="stagefivepointtwo.html">Template 2 - Business Model Canvas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+	
+	
+    <!-- Carousel
+    =========================-->
+    
+    <div id="myCarousel" class="carousel slide" data-interval="false">
+        
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+            
+            <div class="item active">
+                <img src="img/slide2.jpg"/>
+                <div class="container">
+                    <div class="carousel-caption">
+						<h1>Stage 1 - Template 1</h1>
+                        <h2>Key facts & data: (1 of 3)</h2>
+                        <p><textarea id='111' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='What are the main facts, figures, statistics, data points and background information of relevance here?'></textarea></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src="img/slide3.png"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Insights (Research/Observe): (2 of 3)</h2>
+                        <p><textarea id='112' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='List below anything you have researched or observed which may be useful in understanding the case? Consider environmental technology and business trends. Can you think of failure or success stories in this space?'></textarea></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src="img/slide4.jpg"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Challenges: (3 of 3)</h2>
+						<div id = "1131">
+							<input id = "1131" type="text"/>
+						</div>
+						<br/>
+						<div>
+							<input type="button" onclick="addtext()" value="Add"/>
+							<input type="button" onclick="removetext()" value="Remove"/>
+						</div>
+						<br/>
+                        <p><a class="btn btn-large btn-primary" href="stagetwopointone.html">Submit</a></p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        
+    </div>
+	
+	
+	<!-- Collapse
+    =========================-->
+	
+	<div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        Key facts & data:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+				For example take the case study of ebay. Its an Ecommerce company who's corporate strategy lies on the idea that practically anything that can be bought and sold can be facilitated through this Internet retailer, and this auction platform provider was implementing the concept of e-commerce even more forcefully.“We help people trade practically anything on earth and conduct commerce through the Internet on a global basis” is certainly eBay’s business model.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        Insights (Research/Observe):
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+					147 million people now use eBay. An estimated 430,000 people in the United States make all or most of their living by selling on eBay. eBay proclaims “trust” between buyers and sellers as the key to the success of the marketplace. Today eBay users can bid anything from office equipments to real estate to cars.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        Challenges:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Challenges for e-bay would be from similar e-commerce sites such as flipkart and amazon. The challenges may be insufficient sellers.
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	<!-- Footer and Modal
+    ==========================-->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <hr/>
+                <p>Copyright &copy; PES Institute Of Technology
+                    <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+                </p>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabinex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Terms and Conditions</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p>The text will go here.....</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+	
+</body>
+</html>

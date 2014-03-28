@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Stage Five - Template Two</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/storetodb.js"></script>
+	<script src="js/getfromdb.js"></script>
+	
+	<style type="text/css">
+	img
+	{
+		height:500px;
+		width:1366px;
+	}
+	textarea
+	{
+		resize:none;
+	}
+	div.carousel-caption
+	{
+		position:absolute;
+		top:15%;
+	}
+	.navbar-default 
+	{
+		background-color: aqua;
+		border-color: aqua;
+	}
+	.navbar-default .navbar-brand 
+	{
+		color: #777777;
+	}
+	</style>
+	
+	<script type="text/javascript">
+	
+		var myid = 521;
+		function set1()
+		{
+			myid = 521;
+			getfromdb();
+		}
+		function set2()
+		{
+			myid = 522;
+			getfromdb();
+		}
+		function set3()
+		{
+			myid = 523;
+			getfromdb();
+		}
+		function set4()
+		{
+			myid = 524;
+			getfromdb();
+		}
+		function set5()
+		{
+			myid = 525;
+			getfromdb();
+		}
+		function set6()
+		{
+			myid = 526;
+			getfromdb();
+		}
+		function set7()
+		{
+			myid = 527;
+			getfromdb();
+		}
+		function set8()
+		{
+			myid = 528;
+			getfromdb();
+		}
+		function set9()
+		{
+			myid = 529;
+			getfromdb();
+		}
+	
+	</script>
+</head>
+
+<body>
+	
+	<!-- Fixes Navigation Bar
+    ======================================================-->
+    
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">Home</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+					<li><a href="getstarted.html">Get Started</a></li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 1 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stageonepointone.html">Template 1 - Understand</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagetwopointone.html">Template 1 - Identify</a></li>
+                            <li><a href="stagetwopointtwo.html">Template 2 - Problem Selection</a></li>
+                            <li><a href="stagetwopointthree.html">Template 3 - Problem Description</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagethreepointone.html">Template 1 - Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagefourpointone.html">Template 1 - Idea Selection</a></li>
+                            <li><a href="stagefourpointtwo.html">Template 2 - Idea Description</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagefivepointone.html">Template 1 - Types of Business Model</a></li>
+                            <li><a href="stagefivepointtwo.html">Template 2 - Business Model Canvas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+	
+	
+	
+    <!-- Carousel
+    =========================-->
+    
+    <div id="myCarousel" class="carousel slide" data-interval="false">
+        
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+			<li data-target="#myCarousel" data-slide-to="5"></li>
+			<li data-target="#myCarousel" data-slide-to="6"></li>
+			<li data-target="#myCarousel" data-slide-to="7"></li>
+			<li data-target="#myCarousel" data-slide-to="8"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/slide3.png"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Stage 5 - Template 2</h1>
+                        <h2>Key Partners: (1 of 9)</h2>
+                        <p><textarea id='521' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='What are the key partners? Who are our key suppliers? Which key resources are we acquiring from suppliers? Which key activities do partners perform?'></textarea></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/slide4.jpg"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Key activities: (2 of 9)</h2>
+						 <p><textarea id='522' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='What key activities do our value proposition require? Our distribution channels? Customer relationships? Revenue stream?'></textarea></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/slide5.jpg"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Key Resources: (3 of 9)</h2>
+                        <p><textarea id='523' rows='6' cols='100' onfocus='set3()' onblur='savetodb()' placeholder='What key resources do value propositions require? Our distribution channels? Customer relationships? Revenue streams? '></textarea></p>
+                    </div>
+                </div>
+            </div>
+			<div class="item">
+                <img src="img/slide1.jpg"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Value Propositions: (4 of 9)</h2>
+						<p><textarea id='524' rows='6' cols='100' onfocus='set4()' onblur='savetodb()' placeholder='What value do we deliver to the customer? Which one of our customers problem are we helping to solve? What bundles of products and services are we offering to each customer segment? Which customer needs are we satisfying?'></textarea></p>                       
+                    </div>
+                </div>
+            </div>
+			<div class="item">
+				<img src="img/slide3.png"/>
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Customer relationships: (5 of 9)</h2>
+						<p><textarea id='525' rows='6' cols='100' onfocus='set5()' onblur='savetodb()' placeholder='What type of relationship does each of our customer Segments expect us to establish and maintain with them? Which ones have we established? How are they integrated with the rest of the business model? How costly are they?'></textarea></p>   
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="img/slide3.png"/>
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Channels: (6 of 9)</h2>
+						<p><textarea id='526' rows='6' cols='100' onfocus='set6()' onblur='savetodb()' placeholder='Through which channels do our customer segments want to be reached? How are we reaching them now? How are our channels integrated? Which ones work best? Which ones are most cost-efficient? How are we integrating them with customer routines?'></textarea></p>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="img/slide3.png"/>
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Customer Segments: (7 of 9)</h2>
+						<p><textarea id='527' rows='6' cols='100' onfocus='set7()' onblur='savetodb()' placeholder='For whom are we creating value? Who are our most important customers?'></textarea></p>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="img/slide3.png"/>
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Cost Structure: (8 of 9)</h2>
+						<p><textarea id='528' rows='6' cols='100' onfocus='set8()' onblur='savetodb()' placeholder='What are the most important costs inherent in our business? Which key resources are most expensive? Which key activities are most expensive? '></textarea></p>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="img/slide3.png"/>
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Revenue Streams: (9 of 9)</h2>
+						<p><textarea id='529' rows='6' cols='100' onfocus='set9()' onblur='savetodb()' placeholder='For what value are our customers willing to pay? For what do they currently pay? How are they currently paying? How would they prefer to pay? How much does each revenue stream contribute to overall revenues?'></textarea></p>
+						<br/>
+                        <p><a class="btn btn-large btn-primary" href="index.html">Submit</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+		
+	</div>
+	
+	
+	<!-- Collapse
+    =========================-->
+	
+	<div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        Key Partners:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        Key Activities:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+					Users for e-bay will be retail buyers and bulk sellers.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        Key Resources:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+					Suppose we are concentrating on the problems of sellers, "Seller" becomes our main user segment.
+				</div>
+            </div>
+        </div>
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                        Value Proposition:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse">
+                <div class="panel-body">
+					Here we need to write about the main problems faced by the sellers of e-bay. The main problems faced by sellers are wrong address given by the buyers. The items sent by the seller might get damaged due to various reasons. The other problem faced by sellers could be their item not reaching the destination in right time. 
+				</div>
+            </div>
+        </div>
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                        Customer Relationships:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+					Here we need to write about the main problems faced by the sellers of e-bay. The main problems faced by sellers are wrong address given by the buyers. The items sent by the seller might get damaged due to various reasons. The other problem faced by sellers could be their item not reaching the destination in right time. 
+				</div>
+            </div>
+        </div>
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                        Channels:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+                <div class="panel-body">
+					Here we need to write about the main problems faced by the sellers of e-bay. The main problems faced by sellers are wrong address given by the buyers. The items sent by the seller might get damaged due to various reasons. The other problem faced by sellers could be their item not reaching the destination in right time. 
+				</div>
+            </div>
+        </div>
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+                        Customer Segments:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSeven" class="panel-collapse collapse">
+                <div class="panel-body">
+					Users for e-bay will be retail buyers and bulk sellers.
+                </div>
+            </div>
+        </div>
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+                        Cost Structure:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse">
+                <div class="panel-body">
+					Users for e-bay will be retail buyers and bulk sellers.
+                </div>
+            </div>
+        </div>
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+                        Revenue Streams:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseNine" class="panel-collapse collapse">
+                <div class="panel-body">
+					Users for e-bay will be retail buyers and bulk sellers.
+                </div>
+            </div>
+        </div>
+	</div>
+
+	
+	<!-- Footer and Modal
+    ==========================-->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <hr/>
+                <p>Copyright &copy; PES Institute Of Technology
+                    <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+                </p>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabinex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Terms and Conditions</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p>The text will go here.....</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+	
+</body>
+</html>
