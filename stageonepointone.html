@@ -42,14 +42,14 @@
 		{
 			if(count < 1140)
 			{
-				var mytext = document.getElementById('1131');
+				var mydiv = document.getElementById('a1');
 				count++;
 				var newtext = document.createElement('input');
 				newtext.type = 'text';
 				newtext.id = ''+count;
 				var newbr = document.createElement('br')
-				mytext.appendChild(newbr);
-				mytext.appendChild(newtext);
+				mydiv.appendChild(newbr);
+				mydiv.appendChild(newtext);
 			}
 			else
 			{
@@ -60,15 +60,36 @@
 		{
 			if(count > 1131)
 			{
-				var mytext = document.getElementById('1131');
-				mytext.removeChild(mytext.lastChild);
-				mytext.removeChild(mytext.lastChild);
+				var mydiv = document.getElementById('a1');
+				mydiv.removeChild(mydiv.lastChild);
+				mydiv.removeChild(mydiv.lastChild);
 				count--;
 			}
 			else
 			{
 				alert("Minimum Limit Reached !!");
 			}
+		}
+		function createdropdown()
+		{
+			/*var mybutton = document.getElementById('add');
+			mybutton.style.display = 'none';
+			mybutton = document.getElementById('remove');
+			mybutton.style.display = 'none';
+			mybutton = document.getElementById('confirm');
+			mybutton.style.display = 'none';*/
+			var mydiv = document.getElementById('b1');
+			mydiv.removeChild(mydiv.lastChild);
+			var newnode = document.createElement('select');
+			newnode.id = 'mydropdown';
+			for(var i = 1131; i <= count; i++)
+			{
+				var newopt = document.createElement('option');
+				var myvalue = document.getElementById(i);
+				newopt.innerHTML = myvalue.value;
+				newnode.appendChild(newopt);
+			}
+			mydiv.appendChild(newnode);
 		}
 		var myid = 111;
 		function set1()
@@ -152,6 +173,7 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
         
         <div class="carousel-inner">
@@ -161,7 +183,7 @@
                 <div class="container">
                     <div class="carousel-caption">
 						<h1>Stage 1 - Template 1</h1>
-                        <h2>Key facts & data: (1 of 3)</h2>
+                        <h2>Key facts & data: (1 of 4)</h2>
                         <p><textarea id='111' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='What are the main facts, figures, statistics, data points and background information of relevance here?'></textarea></p>
                     </div>
                 </div>
@@ -171,7 +193,7 @@
                 <img src="img/slide3.png"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>Insights (Research/Observe): (2 of 3)</h2>
+                        <h2>Insights (Research/Observe): (2 of 4)</h2>
                         <p><textarea id='112' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='List below anything you have researched or observed which may be useful in understanding the case? Consider environmental technology and business trends. Can you think of failure or success stories in this space?'></textarea></p>
                     </div>
                 </div>
@@ -181,20 +203,33 @@
                 <img src="img/slide4.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>Challenges: (3 of 3)</h2>
-						<div id = "1131">
+                        <h2>Challenges: (3 of 4)</h2>
+						<div id = 'a1'>
 							<input id = "1131" type="text"/>
 						</div>
 						<br/>
 						<div>
 							<input type="button" onclick="addtext()" value="Add"/>
 							<input type="button" onclick="removetext()" value="Remove"/>
+							<br/>
+							<input type="button" onclick="createdropdown()" value="Confirm"/>
+						</div>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="item">
+                <img src="img/slide5.jpg"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Select a particular Challenge that will be focussed: (4 of 4)</h2>
+						<div id = 'b1'>
 						</div>
 						<br/>
                         <p><a class="btn btn-large btn-primary" href="stagetwopointone.html">Submit</a></p>
-                    </div>
+					</div>
                 </div>
-            </div>  
+            </div>
         </div>
         
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">

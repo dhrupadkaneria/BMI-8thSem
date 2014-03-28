@@ -37,19 +37,19 @@
 	</style>
 	
 	<script type="text/javascript">
-		var count1 = 1;
+		var count1 = 2111;
 		function addtext1()
 		{
-			if(count1 < 6)
+			if(count1 < 2117)
 			{
-				var mytext = document.getElementById("a1");
+				var mydiv = document.getElementById('a1');
 				count1++;
 				var newtext = document.createElement('input');
 				newtext.type = 'text';
-				newtext.id = 'a'+ count1;
+				newtext.id = ''+count1;
 				var newbr = document.createElement('br')
-				mytext.appendChild(newbr);
-				mytext.appendChild(newtext);
+				mydiv.appendChild(newbr);
+				mydiv.appendChild(newtext);
 			}
 			else
 			{
@@ -58,32 +58,47 @@
 		}
 		function removetext1()
 		{
-			if(count1 > 1)
+			if(count1 > 2111)
 			{
-				var mytext = document.getElementById("a1");
-				var rmtext = document.getElementById("a"+count1);
+				var mydiv = document.getElementById('a1');
+				mydiv.removeChild(mydiv.lastChild);
+				mydiv.removeChild(mydiv.lastChild);
 				count1--;
-				mytext.removeChild(rmtext);
-				mytext.removeChild(mytext.lastChild);
 			}
 			else
 			{
 				alert("Minimum Limit Reached !!");
 			}
 		}
-		var count2 = 1;
+		function createdropdown1()
+		{
+			var mydiv = document.getElementById('b1');
+			mydiv.removeChild(mydiv.lastChild);
+			var newnode = document.createElement('select');
+			newnode.id = 'mydropdown1';
+			for(var i = 2111; i <= count1; i++)
+			{
+				var newopt = document.createElement('option');
+				var myvalue = document.getElementById(i);
+				newopt.innerHTML = myvalue.value;
+				newnode.appendChild(newopt);
+			}
+			mydiv.appendChild(newnode);
+		}
+		
+		var count2 = 2131;
 		function addtext2()
 		{
-			if(count2 < 10)
+			if(count2 < 2140)
 			{
-				var mytext = document.getElementById("b1");
+				var mydiv = document.getElementById('a2');
 				count2++;
 				var newtext = document.createElement('input');
 				newtext.type = 'text';
-				newtext.id = 'b'+ count2;
+				newtext.id = ''+count2;
 				var newbr = document.createElement('br')
-				mytext.appendChild(newbr);
-				mytext.appendChild(newtext);
+				mydiv.appendChild(newbr);
+				mydiv.appendChild(newtext);
 			}
 			else
 			{
@@ -92,18 +107,32 @@
 		}
 		function removetext2()
 		{
-			if(count2 > 1)
+			if(count2 > 2131)
 			{
-				var mytext = document.getElementById("b1");
-				var rmtext = document.getElementById("b"+count2);
+				var mydiv = document.getElementById('a2');
+				mydiv.removeChild(mydiv.lastChild);
+				mydiv.removeChild(mydiv.lastChild);
 				count2--;
-				mytext.removeChild(rmtext);
-				mytext.removeChild(mytext.lastChild);
 			}
 			else
 			{
 				alert("Minimum Limit Reached !!");
 			}
+		}
+		function createdropdown2()
+		{
+			var mydiv = document.getElementById('b2');
+			mydiv.removeChild(mydiv.lastChild);
+			var newnode = document.createElement('select');
+			newnode.id = 'mydropdown2';
+			for(var i = 2131; i <= count2; i++)
+			{
+				var newopt = document.createElement('option');
+				var myvalue = document.getElementById(i);
+				newopt.innerHTML = myvalue.value;
+				newnode.appendChild(newopt);
+			}
+			mydiv.appendChild(newnode);
 		}
 		var myid = 212;
 		function set1()
@@ -188,6 +217,7 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
 			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
         </ol>
         
         <div class="carousel-inner">
@@ -197,15 +227,17 @@
                 <div class="container">
                     <div class="carousel-caption">
 						<h1>Stage 2 - Template 1</h1>
-                        <h2>Users: (1 of 4)</h2>
+                        <h2>Users: (1 of 5)</h2>
 						<h3>Based on the sub-challenges from previous stage - list the different user segments you have identified</h3>
                         <div id = "a1">
-							<input type="text"/>
+							<input id = "2111" type="text"/>
 						</div>
 						<br/>
 						<div>
 							<input type="button" onclick="addtext1()" value="Add"/>
 							<input type="button" onclick="removetext1()" value="Remove"/>
+							<br/>
+							<input type="button" onclick="createdropdown1()" value="Confirm"/>
 						</div>
 					</div>
                 </div>
@@ -215,9 +247,11 @@
                 <img src="img/slide4.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>Your main user segment: (2 of 4)</h2>
-                        <p><textarea id='212' rows='2' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='Your main user segment'></textarea></p>
-                    </div>
+                        <h2>Select Your main user segment: (2 of 5)</h2>
+                        <!--<p><textarea id='212' rows='2' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='Your main user segment'></textarea></p>-->
+						<div id = 'b1'>
+						</div>
+					</div>
                 </div>
             </div>
             
@@ -225,17 +259,30 @@
                 <img src="img/slide5.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>Problem areas: (3 of 4)</h2>
+                        <h2>Problem areas: (3 of 5)</h2>
 						<h3>List all your user problems - be very specific (when how where)</h3>
-                        <div id = "b1">
-							<input type="text"/>
+                        <div id = "a2">
+							<input id = "2131" type="text"/>
 						</div>
 						<br/>
 						<div>
 							<input type="button" onclick="addtext2()" value="Add"/>
 							<input type="button" onclick="removetext2()" value="Remove"/>
+							<br/>
+							<input type="button" onclick="createdropdown2()" value="Confirm"/>
 						</div>
                     </div>
+                </div>
+            </div>
+			
+			<div class="item">
+                <img src="img/slide3.png"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h2>Select a particular problem that will be focussed: (4 of 5)</h2>
+						<div id = 'b2'>
+						</div>
+					</div>
                 </div>
             </div>
 			
@@ -243,7 +290,7 @@
                 <img src="img/slide1.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>New Insight about your User: (4 of 4)</h2>
+                        <h2>New Insight about your User: (5 of 5)</h2>
 						<p><textarea id='214' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Data points from expert interviews and online research'></textarea></p>
 						<br/>
 						<p><a class="btn btn-large btn-primary" href="stagetwopointthree.html">Submit</a></p>
