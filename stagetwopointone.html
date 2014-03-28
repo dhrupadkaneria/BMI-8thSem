@@ -82,6 +82,8 @@
 				var myvalue = document.getElementById(i);
 				newopt.innerHTML = myvalue.value;
 				newnode.appendChild(newopt);
+				myid = i;
+				savetodb();
 			}
 			mydiv.appendChild(newnode);
 		}
@@ -131,18 +133,15 @@
 				var myvalue = document.getElementById(i);
 				newopt.innerHTML = myvalue.value;
 				newnode.appendChild(newopt);
+				myid = i;
+				savetodb();
 			}
 			mydiv.appendChild(newnode);
 		}
-		var myid = 212;
-		function set1()
-		{
-			myid = 212;
-			getfromdb();
-		}
+		var myid = 215;
 		function set2()
 		{
-			myid = 214;
+			myid = 215;
 			getfromdb();
 		}
 	</script>
@@ -248,7 +247,6 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h2>Select Your main user segment: (2 of 5)</h2>
-                        <!--<p><textarea id='212' rows='2' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='Your main user segment'></textarea></p>-->
 						<div id = 'b1'>
 						</div>
 					</div>
@@ -291,7 +289,7 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h2>New Insight about your User: (5 of 5)</h2>
-						<p><textarea id='214' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Data points from expert interviews and online research'></textarea></p>
+						<p><textarea id='215' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Data points from expert interviews and online research'></textarea></p>
 						<br/>
 						<p><a class="btn btn-large btn-primary" href="stagetwopointthree.html">Submit</a></p>
                     </div>

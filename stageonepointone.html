@@ -88,6 +88,8 @@
 				var myvalue = document.getElementById(i);
 				newopt.innerHTML = myvalue.value;
 				newnode.appendChild(newopt);
+				myid = i;
+				savetodb();
 			}
 			mydiv.appendChild(newnode);
 		}
