@@ -37,61 +37,29 @@
 	</style>
 	
 	<script type="text/javascript">
-		var count = 1131;
-		function addtext()
-		{
-			if(count < 1140)
-			{
-				var mydiv = document.getElementById('a1');
-				count++;
-				var newtext = document.createElement('input');
-				newtext.type = 'text';
-				newtext.id = ''+count;
-				var newbr = document.createElement('br')
-				mydiv.appendChild(newbr);
-				mydiv.appendChild(newtext);
-			}
-			else
-			{
-				alert("Maximum Limit Reached !!");
-			}
-		}
-		function removetext()
-		{
-			if(count > 1131)
-			{
-				var mydiv = document.getElementById('a1');
-				mydiv.removeChild(mydiv.lastChild);
-				mydiv.removeChild(mydiv.lastChild);
-				count--;
-			}
-			else
-			{
-				alert("Minimum Limit Reached !!");
-			}
-		}
 		function createdropdown()
 		{
-			/*var mybutton = document.getElementById('add');
-			mybutton.style.display = 'none';
-			mybutton = document.getElementById('remove');
-			mybutton.style.display = 'none';
-			mybutton = document.getElementById('confirm');
-			mybutton.style.display = 'none';*/
 			var mydiv = document.getElementById('b1');
 			mydiv.removeChild(mydiv.lastChild);
 			var newnode = document.createElement('select');
 			newnode.id = 'mydropdown';
-			for(var i = 1131; i <= count; i++)
+			for(var i = 1131; i <= 1140; i++)
 			{
 				var newopt = document.createElement('option');
 				var myvalue = document.getElementById(i);
 				newopt.innerHTML = myvalue.value;
-				newnode.appendChild(newopt);
-				myid = i;
-				savetodb();
+				if(newopt.innerHTML != '')
+				{
+					newnode.appendChild(newopt);
+				}
 			}
 			mydiv.appendChild(newnode);
+		}
+		function savedata(e)
+		{
+			var evnt = e.target;
+			myid = evnt.id;
+			savetodb();
 		}
 		var myid = 111;
 		function set1()
@@ -207,12 +175,18 @@
                     <div class="carousel-caption">
                         <h2>Challenges: (3 of 4)</h2>
 						<div id = 'a1'>
-							<input id = "1131" type="text"/>
+							<input id = "1131" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1132" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1133" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1134" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1135" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1136" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1137" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1138" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1139" type="text" onblur="savedata(event)"/><br/>
+							<input id = "1140" type="text" onblur="savedata(event)"/><br/>
 						</div>
-						<br/>
 						<div>
-							<input type="button" onclick="addtext()" value="Add"/>
-							<input type="button" onclick="removetext()" value="Remove"/>
 							<br/>
 							<input type="button" onclick="createdropdown()" value="Confirm"/>
 						</div>

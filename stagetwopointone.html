@@ -37,89 +37,24 @@
 	</style>
 	
 	<script type="text/javascript">
-		var count1 = 2111;
-		function addtext1()
-		{
-			if(count1 < 2117)
-			{
-				var mydiv = document.getElementById('a1');
-				count1++;
-				var newtext = document.createElement('input');
-				newtext.type = 'text';
-				newtext.id = ''+count1;
-				var newbr = document.createElement('br')
-				mydiv.appendChild(newbr);
-				mydiv.appendChild(newtext);
-			}
-			else
-			{
-				alert("Maximum Limit Reached !!");
-			}
-		}
-		function removetext1()
-		{
-			if(count1 > 2111)
-			{
-				var mydiv = document.getElementById('a1');
-				mydiv.removeChild(mydiv.lastChild);
-				mydiv.removeChild(mydiv.lastChild);
-				count1--;
-			}
-			else
-			{
-				alert("Minimum Limit Reached !!");
-			}
-		}
+		
 		function createdropdown1()
 		{
 			var mydiv = document.getElementById('b1');
 			mydiv.removeChild(mydiv.lastChild);
 			var newnode = document.createElement('select');
 			newnode.id = 'mydropdown1';
-			for(var i = 2111; i <= count1; i++)
+			for(var i = 2111; i <= 2117; i++)
 			{
 				var newopt = document.createElement('option');
 				var myvalue = document.getElementById(i);
 				newopt.innerHTML = myvalue.value;
-				newnode.appendChild(newopt);
-				myid = i;
-				savetodb();
+				if(newopt.innerHTML != '')
+				{
+					newnode.appendChild(newopt);
+				}
 			}
 			mydiv.appendChild(newnode);
-		}
-		
-		var count2 = 2131;
-		function addtext2()
-		{
-			if(count2 < 2140)
-			{
-				var mydiv = document.getElementById('a2');
-				count2++;
-				var newtext = document.createElement('input');
-				newtext.type = 'text';
-				newtext.id = ''+count2;
-				var newbr = document.createElement('br')
-				mydiv.appendChild(newbr);
-				mydiv.appendChild(newtext);
-			}
-			else
-			{
-				alert("Maximum Limit Reached !!");
-			}
-		}
-		function removetext2()
-		{
-			if(count2 > 2131)
-			{
-				var mydiv = document.getElementById('a2');
-				mydiv.removeChild(mydiv.lastChild);
-				mydiv.removeChild(mydiv.lastChild);
-				count2--;
-			}
-			else
-			{
-				alert("Minimum Limit Reached !!");
-			}
 		}
 		function createdropdown2()
 		{
@@ -127,16 +62,23 @@
 			mydiv.removeChild(mydiv.lastChild);
 			var newnode = document.createElement('select');
 			newnode.id = 'mydropdown2';
-			for(var i = 2131; i <= count2; i++)
+			for(var i = 2131; i <= 2140; i++)
 			{
 				var newopt = document.createElement('option');
 				var myvalue = document.getElementById(i);
 				newopt.innerHTML = myvalue.value;
-				newnode.appendChild(newopt);
-				myid = i;
-				savetodb();
+				if(newopt.innerHTML != '')
+				{
+					newnode.appendChild(newopt);
+				}
 			}
 			mydiv.appendChild(newnode);
+		}
+		function savedata(e)
+		{
+			var evnt = e.target;
+			myid = evnt.id;
+			savetodb();
 		}
 		var myid = 215;
 		function set2()
@@ -229,12 +171,15 @@
                         <h2>Users: (1 of 5)</h2>
 						<h3>Based on the sub-challenges from previous stage - list the different user segments you have identified</h3>
                         <div id = "a1">
-							<input id = "2111" type="text"/>
+							<input id = "2111" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2112" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2113" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2114" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2115" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2116" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2117" type="text" onblur="savedata(event)"/><br/>
 						</div>
-						<br/>
 						<div>
-							<input type="button" onclick="addtext1()" value="Add"/>
-							<input type="button" onclick="removetext1()" value="Remove"/>
 							<br/>
 							<input type="button" onclick="createdropdown1()" value="Confirm"/>
 						</div>
@@ -260,12 +205,18 @@
                         <h2>Problem areas: (3 of 5)</h2>
 						<h3>List all your user problems - be very specific (when how where)</h3>
                         <div id = "a2">
-							<input id = "2131" type="text"/>
+							<input id = "2131" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2132" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2133" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2134" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2135" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2136" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2137" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2138" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2139" type="text" onblur="savedata(event)"/><br/>
+							<input id = "2140" type="text" onblur="savedata(event)"/><br/>
 						</div>
-						<br/>
 						<div>
-							<input type="button" onclick="addtext2()" value="Add"/>
-							<input type="button" onclick="removetext2()" value="Remove"/>
 							<br/>
 							<input type="button" onclick="createdropdown2()" value="Confirm"/>
 						</div>

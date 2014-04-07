@@ -9,7 +9,7 @@ function processReq()
 {
 	if (xmlreq.readyState==4 && xmlreq.status==200)
 	{
-		//alert(xmlreq.responseText);
+		//alert(myid);
 		document.getElementById(myid).value = xmlreq.responseText;
 	}
 }
