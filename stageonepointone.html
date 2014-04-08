@@ -65,17 +65,26 @@
 		function set1()
 		{
 			myid = 111;
-			getfromdb();
 		}
 		function set2()
 		{
 			myid = 112;
+		}
+		function init()
+		{
+			myid = 111;
 			getfromdb();
+			myid = 112;
+			getfromdb();
+			for(myid = 1131; myid <= 1140; ++myid)
+			{
+				getfromdb();
+			}
 		}
 	</script>
 </head>
 
-<body>
+<body onload="init()">
    
 	<!-- Fixes Navigation Bar
     ======================================================-->
@@ -88,10 +97,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html" class="navbar-brand">Home</a>
+                <span class="navbar-brand">B-M-I</span>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
 					<li><a href="getstarted.html">Get Started</a></li>
 					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 1 <b class="caret"></b></a>
@@ -175,16 +185,16 @@
                     <div class="carousel-caption">
                         <h2>Challenges: (3 of 4)</h2>
 						<div id = 'a1'>
-							<input id = "1131" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1132" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1133" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1134" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1135" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1136" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1137" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1138" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1139" type="text" onblur="savedata(event)"/><br/>
-							<input id = "1140" type="text" onblur="savedata(event)"/><br/>
+							<label> #1 :&nbsp;&nbsp;</label><input id = "1131" type="text" onblur="savedata(event)"/><br/>
+							<label> #2 :&nbsp;&nbsp;</label><input id = "1132" type="text" onblur="savedata(event)"/><br/>
+							<label> #3 :&nbsp;&nbsp;</label><input id = "1133" type="text" onblur="savedata(event)"/><br/>
+							<label> #4 :&nbsp;&nbsp;</label><input id = "1134" type="text" onblur="savedata(event)"/><br/>
+							<label> #5 :&nbsp;&nbsp;</label><input id = "1135" type="text" onblur="savedata(event)"/><br/>
+							<label> #6 :&nbsp;&nbsp;</label><input id = "1136" type="text" onblur="savedata(event)"/><br/>
+							<label> #7 :&nbsp;&nbsp;</label><input id = "1137" type="text" onblur="savedata(event)"/><br/>
+							<label> #8 :&nbsp;&nbsp;</label><input id = "1138" type="text" onblur="savedata(event)"/><br/>
+							<label> #9 :&nbsp;&nbsp;</label><input id = "1139" type="text" onblur="savedata(event)"/><br/>
+							<label> #10:&nbsp;</label><input id = "1140" type="text" onblur="savedata(event)"/><br/>
 						</div>
 						<div>
 							<br/>

@@ -2,7 +2,7 @@ function getfromdb()
 {
 	xmlreq = new XMLHttpRequest();
 	xmlreq.onreadystatechange = processReq;
-	xmlreq.open("GET","getfromdb.php?myid="+myid,true);
+	xmlreq.open("GET","getfromdb.php?myid="+myid,false);
 	xmlreq.send();
 }
 function processReq()

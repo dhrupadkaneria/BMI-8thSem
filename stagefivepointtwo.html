@@ -42,53 +42,50 @@
 		function set1()
 		{
 			myid = 521;
-			getfromdb();
 		}
 		function set2()
 		{
 			myid = 522;
-			getfromdb();
 		}
 		function set3()
 		{
 			myid = 523;
-			getfromdb();
 		}
 		function set4()
 		{
 			myid = 524;
-			getfromdb();
 		}
 		function set5()
 		{
 			myid = 525;
-			getfromdb();
 		}
 		function set6()
 		{
 			myid = 526;
-			getfromdb();
 		}
 		function set7()
 		{
 			myid = 527;
-			getfromdb();
 		}
 		function set8()
 		{
 			myid = 528;
-			getfromdb();
 		}
 		function set9()
 		{
 			myid = 529;
-			getfromdb();
 		}
-	
+		function init()
+		{
+			for(myid = 521; myid <= 529; ++myid)
+			{
+				getfromdb();
+			}
+		}
 	</script>
 </head>
 
-<body>
+<body onload = "init()">
 	
 	<!-- Fixes Navigation Bar
     ======================================================-->
@@ -101,10 +98,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="index.html" class="navbar-brand">Home</a>
+                <span class="navbar-brand">B-M-I</span>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
 					<li><a href="getstarted.html">Get Started</a></li>
 					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 1 <b class="caret"></b></a>
