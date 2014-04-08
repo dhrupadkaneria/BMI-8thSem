@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stage Four - Template One</title>
+	
+	<link type="text/css" rel="stylesheet" href="css/examples.css"/>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/jquery.flot.js"></script>
+	
+	<style type="text/css">
+	img
+	{
+		height:500px;
+		width:1366px;
+	}
+	textarea
+	{
+		resize:none;
+	}
+	div.carousel-caption
+	{
+		position:absolute;
+		top:15%;
+	}
+	.navbar-default 
+	{
+		background-color: aqua;
+		border-color: aqua;
+	}
+	.navbar-default .navbar-brand 
+	{
+		color: #777777;
+	}
+	</style>
+	
+	<script type="text/javascript">
+	
+	var priority = [];
+	var options = {
+			series: 
+			{
+				lines: 
+				{
+					show: false
+				},
+				points: 
+				{
+					show: true
+				}
+			},
+			grid: 
+			{
+				hoverable: true,
+				clickable: true
+			},
+			yaxis: 
+			{
+				min: 0,
+				max: 10
+			},
+			xaxis: 
+			{
+				min: 0,
+				max: 10
+			}
+		};
+	$(function() 
+	{
+		var plot = $.plot("#placeholder", [{ data: priority}], options);
+
+		$("<div id='tooltip'></div>").css({
+			position: "absolute",
+			display: "none",
+			border: "1px solid #fdd",
+			padding: "2px", "background-color": "#fee",
+			opacity: 0.80
+		}).appendTo("body");
+
+		$("#placeholder").bind("plothover", function (event, pos, item) {
+			if ($("#enableTooltip:checked").length > 0) 
+			{
+				if (item) 
+				{
+					var x = item.datapoint[0].toFixed(2),
+						y = item.datapoint[1].toFixed(2);
+
+					$("#tooltip").html("Value: " + x + "<br/>Uniqueness: " + y)
+						.css({top: item.pageY+15, left: item.pageX+15})
+						.fadeIn(200);
+				} 
+				else 
+				{
+					$("#tooltip").hide();
+				}
+			}
+		});
+	});
+	
+	function init()
+	{
+		var getgraph = new XMLHttpRequest();
+		getgraph.onreadystatechange = function()
+		{
+			if (getgraph.readyState==4 && getgraph.status==200)
+			{
+				lines = getgraph.responseText.split("\n");
+				for(k = 0; k < lines.length; ++k)
+				{
+					retval = lines[k].split(";");
+					priority.push([retval[2], retval[3]]);
+					var plot = $.plot("#placeholder", [{ data: priority}], options);
+				}
+				
+			}
+		};
+		getgraph.open("GET","getgraph.php",false);
+		getgraph.send();
+	}
+	var idea = new Array();
+	var u = new Array();
+	var v = new Array();
+	function submitpoints()
+	{
+		var ide = document.getElementById('ide');
+		var val = document.getElementById('value');
+		var uni = document.getElementById('unique');
+		
+		idea.push(ide.value);
+		v.push(val.value);
+		u.push(uni.value);
+		
+		var storegraph = new XMLHttpRequest();
+		storegraph.onreadystatechange = function()
+		{
+			if (storegraph.readyState==4 && storegraph.status==200)
+			{
+				//alert("Saved into graphs");
+			}
+		};
+		storegraph.open("GET","savegraph.php?ch=2&idea="+ide.value+"&v="+val.value+"&u="+uni.value,false);
+		storegraph.send();
+		
+		for(j = 0; j < v.length; ++j)
+		{
+			priority.push([v[j], u[j]]);
+		}
+		
+		var plot = $.plot("#placeholder", [{ data: priority}], options);
+		ide.value = "";
+	}
+	</script>
+</head>
+<body onload="init()">
+
+	<!-- Fixes Navigation Bar
+    ======================================================-->
+    
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">B-M-I</span>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="getstarted.html">Get Started</a></li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 1 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stageonepointone.html">Template 1 - Understand</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 2 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagetwopointone.html">Template 1 - Identify</a></li>
+                            <li><a href="stagetwopointtwo.html">Template 2 - Problem Selection</a></li>
+                            <li><a href="stagetwopointthree.html">Template 3 - Problem Description</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagethreepointone.html">Template 1 - Technology</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagefourpointone.html">Template 1 - Idea Selection</a></li>
+                            <li><a href="stagefourpointtwo.html">Template 2 - Idea Description</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="stagefivepointone.html">Template 1 - Types of Business Model</a></li>
+                            <li><a href="stagefivepointtwo.html">Template 2 - Business Model Canvas</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+	
+	
+	<!-- Drop Down Bar
+    ======================================================-->
+	<br/><br/><br/>
+	<table>
+		<tr>
+			<td><label>Ideas:</label></td>
+			<td><input id = "ide" type="text"></td>
+		</tr>
+		<tr>
+			<td><label>Value:</label></td>
+			<td>
+				<select id="value">
+					<option value="0.00" selected>0.00</option>
+					<option value="0.50">0.50</option>
+					<option value="1.00">1.00</option>
+					<option value="1.50">1.50</option>
+					<option value="2.00">2.00</option>
+					<option value="2.50">2.50</option>
+					<option value="3.00">3.00</option>
+					<option value="3.50">3.50</option>
+					<option value="4.00">4.00</option>
+					<option value="4.50">4.50</option>
+					<option value="5.00">5.00</option>
+					<option value="5.50">5.50</option>
+					<option value="6.00">6.00</option>
+					<option value="6.50">6.50</option>
+					<option value="7.00">7.00</option>
+					<option value="7.50">7.50</option>
+					<option value="8.00">8.00</option>
+					<option value="8.50">8.50</option>
+					<option value="9.00">9.00</option>
+					<option value="9.50">9.50</option>
+					<option value="10.00">10.00</option>
+				</select>
+			</td>
+			<tr>
+			<td><label>Uniqueness:</label></td>
+			<td>
+				<select id="unique">
+					<option value="0.00" selected>0.00</option>
+					<option value="0.50">0.50</option>
+					<option value="1.00">1.00</option>
+					<option value="1.50">1.50</option>
+					<option value="2.00">2.00</option>
+					<option value="2.50">2.50</option>
+					<option value="3.00">3.00</option>
+					<option value="3.50">3.50</option>
+					<option value="4.00">4.00</option>
+					<option value="4.50">4.50</option>
+					<option value="5.00">5.00</option>
+					<option value="5.50">5.50</option>
+					<option value="6.00">6.00</option>
+					<option value="6.50">6.50</option>
+					<option value="7.00">7.00</option>
+					<option value="7.50">7.50</option>
+					<option value="8.00">8.00</option>
+					<option value="8.50">8.50</option>
+					<option value="9.00">9.00</option>
+					<option value="9.50">9.50</option>
+					<option value="10.00">10.00</option>
+				</select>
+			</td>
+		</tr>
+		</tr>
+	</table>
+	<br/>
+	<input type="button" onclick="submitpoints()" value="Plot"/>
+	<div id="content">
+		<div class="demo-container">
+			<div id="placeholder" class="demo-placeholder"></div>
+		</div>
+		<p><label><input id="enableTooltip" type="checkbox" checked="checked"></input>Enable tooltip</label></p>
+	</div>
+	
+	
+	<!-- Collapse
+    =========================-->
+	
+	<div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                         Value:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+					Write here.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        Uniqueness:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+					Users for e-bay will be retail buyers and bulk sellers.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        Tooltip:
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+					Tooltip gives you details of the problem and its corresponding frequency and importance values that you have selected
+				</div>
+            </div>
+        </div>
+	</div>
+	
+	
+	<!-- Footer and Modal
+    ==========================-->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <hr/>
+                <p>Copyright &copy; PES Institute Of Technology
+                    <a data-toggle="modal" href="#myModal">Terms and Conditions</a>
+                </p>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabinex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2>Terms and Conditions</h2>
+                            </div>
+                            <div class="modal-body">
+                                <p>The text will go here.....</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+	
+	
+	
+</body>
+</html>
