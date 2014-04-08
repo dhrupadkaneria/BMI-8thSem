@@ -100,12 +100,32 @@
 	
 	function init()
 	{
+		var getgraph = new XMLHttpRequest();
+		getgraph.onreadystatechange = function()
+		{
+			if (getgraph.readyState==4 && getgraph.status==200)
+			{
+				lines = getgraph.responseText.split("\n");
+				for(k = 0; k < lines.length; ++k)
+				{
+					retval = lines[k].split(";");
+					if(retval[0] == 1)
+					{
+						priority.push([retval[2], retval[3]]);
+						var plot = $.plot("#placeholder", [{ data: priority}], options);
+					}
+				}
+			}
+		};
+		getgraph.open("GET","getgraph.php",false);
+		getgraph.send();
+		
+		
 		var mydiv = document.getElementById('mydd');
 		var newnode = document.createElement('select');
 		newnode.id = 'mydropdown';
 		for(var i = 2131; i <= 2140; i++)
 		{
-			
 			var newopt = document.createElement('option');
 			xmlreqget = new XMLHttpRequest();
 			xmlreqget.onreadystatechange = function(){
@@ -115,7 +135,6 @@
 					newopt.id = i;
 					newopt.innerHTML = xmlreqget.responseText;
 					newnode.appendChild(newopt);
-					
 				}
 			};
 			xmlreqget.open("GET","getfromdb.php?myid="+i,false);
@@ -137,7 +156,16 @@
 		f.push(freq.value);
 		i.push(imp.value);
 		
-		mdd.removeChild(document.getElementById(mdd.options[mydropdown.selectedIndex].id));
+		var storegraph = new XMLHttpRequest();
+		storegraph.onreadystatechange = function()
+		{
+			if (storegraph.readyState==4 && storegraph.status==200)
+			{
+				//alert("Saved into graphs");
+			}
+		};
+		storegraph.open("GET","savegraph.php?ch=1&cont="+mdd.value+"&x="+imp.value+"&y="+freq.value,false);
+		storegraph.send();
 		
 		for(j = 0; j < f.length; ++j)
 		{
@@ -145,6 +173,14 @@
 		}
 		
 		var plot = $.plot("#placeholder", [{ data: priority}], options);
+		
+		
+		/*var mysel = document.getElementById('f1');
+		var myopt = document.createElement('option');
+		myopt.innerHTML = "Problem="+mdd.value+"\nXaxis="+imp.value+"Yaxis="+freq.value;
+		mysel.appendChild(myopt);*/
+		
+		mdd.removeChild(document.getElementById(mdd.options[mydropdown.selectedIndex].id));
 	}
 	</script>
 </head>
@@ -276,6 +312,7 @@
 	</table>
 	<br/>
 	<input type="button" onclick="submitpoints()" value="Plot"/>
+	<!--<select id = "f1"></select>-->
 	<div id="content">
 		<div class="demo-container">
 			<div id="placeholder" class="demo-placeholder"></div>

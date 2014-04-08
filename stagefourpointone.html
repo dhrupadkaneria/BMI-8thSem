@@ -109,10 +109,12 @@
 				for(k = 0; k < lines.length; ++k)
 				{
 					retval = lines[k].split(";");
-					priority.push([retval[2], retval[3]]);
-					var plot = $.plot("#placeholder", [{ data: priority}], options);
+					if(retval[0] == 2)
+					{
+						priority.push([retval[2], retval[3]]);
+						var plot = $.plot("#placeholder", [{ data: priority}], options);
+					}
 				}
-				
 			}
 		};
 		getgraph.open("GET","getgraph.php",false);
@@ -139,7 +141,7 @@
 				//alert("Saved into graphs");
 			}
 		};
-		storegraph.open("GET","savegraph.php?ch=2&idea="+ide.value+"&v="+val.value+"&u="+uni.value,false);
+		storegraph.open("GET","savegraph.php?ch=2&cont="+ide.value+"&x="+val.value+"&y="+uni.value,false);
 		storegraph.send();
 		
 		for(j = 0; j < v.length; ++j)
