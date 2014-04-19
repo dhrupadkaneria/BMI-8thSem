@@ -82,6 +82,20 @@
 				getfromdb();
 			}
 		}
+		
+		function getpdf()
+		{
+			var kp = document.getElementById("521").value;
+			var ka = document.getElementById("522").value;
+			var kr = document.getElementById("523").value;
+			var vp = document.getElementById("524").value;
+			var cr = document.getElementById("525").value;
+			var ch = document.getElementById("526").value;
+			var cs = document.getElementById("527").value;
+			var cst = document.getElementById("528").value;
+			var rs = document.getElementById("529").value;
+			window.parent.location.href = "getpdf.php?kp="+kp+"&ka="+ka+"&kr="+kr+"&vp="+vp+"&cr="+cr+"&ch="+ch+"&cs="+cs+"&cst="+cst+"&rs="+rs;
+		}
 	</script>
 </head>
 
@@ -244,7 +258,7 @@
 						<h2>Revenue Streams: (9 of 9)</h2>
 						<p><textarea id='529' rows='6' cols='100' onfocus='set9()' onblur='savetodb()' placeholder='For what value are our customers willing to pay? For what do they currently pay? How are they currently paying? How would they prefer to pay? How much does each revenue stream contribute to overall revenues?'></textarea></p>
 						<br/>
-                        <p><a class="btn btn-large btn-primary" href="index.html">Submit</a></p>
+                        <p><a class="btn btn-large btn-primary" href="javascript:void(0)" onclick="getpdf()">Submit</a></p>
 					</div>
 				</div>
 			</div>

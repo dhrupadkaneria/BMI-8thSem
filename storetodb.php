@@ -14,7 +14,6 @@
 			{
 				$mn->nodeValue = $val;
 				$doc->save('test.xml');
-				//echo $mn->nodeValue."<br/>";
 			}
 		}
 	}
@@ -27,5 +26,4 @@
 		$t = $b->appendChild($t);
 		$doc->save('test.xml');
 	}
-	//echo "Database Updated Successfully!!";
 ?>
