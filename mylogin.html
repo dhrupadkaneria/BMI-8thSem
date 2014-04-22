@@ -69,11 +69,19 @@
 			</div>
 			
 		</div><!-- /container -->
-		<div style="position:relative; left:50%">
+		<div style="position:absolute; left:80%; top:10%">
 			<form method="post" action="checklogin.php">
-				User Id: <input type="text" name="uid"><br>
-				Password: <input type="password" name="pw"><br>
-				<input type="submit" value="Login">
+				<table>
+					<tr>
+						<td><label>User Id:</label></td>
+						<td><input type="text" name="uid"></td>
+					</tr>
+					<tr>
+						<td><label>Password:</label></td>
+						<td><input type="password" name="pw"></td>
+					</tr>
+				</table>
+				<input class='btn btn-primary' type="submit" value="Login">
 			</form>
 		</div>
 	</body>

@@ -110,7 +110,8 @@
                             <li><a href="stagefivepointtwo.php">Template 2 - Business Model Canvas</a></li>
                         </ul>
                     </li>
-					<li><a href="logout.php">Log Out</a></li>
+					<li><a style="position:fixed; right:200px" >Welcome <?php echo $_SESSION['name']; ?>,</a></li>
+					<li><a style="position:fixed; right:100px" href="logout.php">Log Out</a></li>
                 </ul>
             </div>
             
@@ -161,7 +162,7 @@
                         <h2>Technologies Known</h2>
 						<p><textarea id='312' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Write down the technologies from the available technologies which you already know?'></textarea></p>
 						<br/>
-                        <p><a class="btn btn-large btn-primary" href="stagefourpointone.html">Submit</a></p>
+                        <p><a class="btn btn-large btn-primary" href="stagefourpointone.php">Next Stage</a></p>
                     </div>
                 </div>
             </div>  

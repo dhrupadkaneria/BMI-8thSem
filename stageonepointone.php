@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	if($_SESSION['sid']==session_id())
+	{
+?>
 <!DOCTYPE html>
 
 <html>
@@ -137,7 +142,8 @@
                             <li><a href="stagefivepointtwo.php">Template 2 - Business Model Canvas</a></li>
                         </ul>
                     </li>
-					<li><a href="logout.php">Log Out</a></li>
+					<li><a style="position:fixed; right:200px" >Welcome <?php echo $_SESSION['name']; ?>,</a></li>
+					<li><a style="position:fixed; right:100px" href="logout.php">Log Out</a></li>
                 </ul>
             </div>
             
@@ -215,7 +221,7 @@
 						</div>
 						<div>
 							<br/>
-							<input type="button" onclick="createdropdown()" value="Confirm"/>
+							<input type="button" class='btn btn-primary' onclick="createdropdown()" value="Confirm"/>
 						</div>
                     </div>
                 </div>
@@ -229,7 +235,7 @@
 						<div id = 'b1'>
 						</div>
 						<br/>
-                        <p><a class="btn btn-large btn-primary" href="stagetwopointone.php">Submit</a></p>
+                        <p><a class="btn btn-large btn-primary" href="stagetwopointone.php">Next Stage</a></p>
 					</div>
                 </div>
             </div>
@@ -330,3 +336,10 @@
 	
 </body>
 </html>
+<?php
+	}
+	else
+	{
+		header("location:mylogin.html");
+	}
+?>

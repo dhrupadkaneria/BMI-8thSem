@@ -131,7 +131,8 @@
                             <li><a href="stagefivepointtwo.php">Template 2 - Business Model Canvas</a></li>
                         </ul>
                     </li>
-					<li><a href="logout.php">Log Out</a></li>
+					<li><a style="position:fixed; right:200px" >Welcome <?php echo $_SESSION['name']; ?>,</a></li>
+					<li><a style="position:fixed; right:100px" href="logout.php">Log Out</a></li>
                 </ul>
             </div>
             
@@ -237,13 +238,13 @@
 				</div>
 			</div>		
 			<div class="item">
-				<img src="img/slide2.jpg"/>
+				<img src="img/slide6.jpg"/>
 				<div class="container">
 					<div class="carousel-caption">
 						<h2>Revenue: (6 of 6)</h2>
 						<p><textarea id='426' rows='6' cols='100' onfocus='set6()' onblur='savetodb()' placeholder='How are you going to make money? Who pays? How much will they pay? How do they pay (one-time fee/ongoing subscription/license..)?'></textarea></p>
 						<br/>
-						<p><a class="btn btn-large btn-primary" href="stagefivepointone.html">Submit</a></p>
+						<p><a class="btn btn-large btn-primary" href="stagefivepointone.php">Next Stage</a></p>
 					</div>
 				</div>
 			</div>

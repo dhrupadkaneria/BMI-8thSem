@@ -118,7 +118,8 @@
                             <li><a href="stagefivepointtwo.php">Template 2 - Business Model Canvas</a></li>
                         </ul>
                     </li>
-					<li><a href="logout.php">Log Out</a></li>
+					<li><a style="position:fixed; right:200px" >Welcome <?php echo $_SESSION['name']; ?>,</a></li>
+					<li><a style="position:fixed; right:100px" href="logout.php">Log Out</a></li>
                 </ul>
             </div>
             
@@ -183,7 +184,7 @@
                         <h2>Problem statement: (3 of 3)</h2>
                         <p><textarea id='233' rows='2' cols='100' onfocus='set3()' onblur='savetodb()' placeholder='Formulate one very precise sentence that summarizes exactly the problem you want to solve'></textarea></p>
 						<br/>
-						<p><a class="btn btn-large btn-primary" href="stagethreepointone.html">Submit</a></p>
+						<p><a class="btn btn-large btn-primary" href="stagethreepointone.php">Next Stage</a></p>
 					</div>
                 </div>
             </div>

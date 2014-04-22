@@ -141,7 +141,8 @@
                             <li><a href="stagefivepointtwo.php">Template 2 - Business Model Canvas</a></li>
                         </ul>
                     </li>
-					<li><a href="logout.php">Log Out</a></li>
+					<li><a style="position:fixed; right:200px" >Welcome <?php echo $_SESSION['name']; ?>,</a></li>
+					<li><a style="position:fixed; right:100px" href="logout.php">Log Out</a></li>
                 </ul>
             </div>
             
@@ -197,7 +198,7 @@
 						</div>
 						<div>
 							<br/>
-							<input type="button" onclick="createdropdown1()" value="Confirm"/>
+							<input type="button" class='btn btn-primary' onclick="createdropdown1()" value="Confirm"/>
 						</div>
 					</div>
                 </div>
@@ -243,7 +244,7 @@
                         <h2>New Insight about your User: (4 of 4)</h2>
 						<p><textarea id='214' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Data points from expert interviews and online research'></textarea></p>
 						<br/>
-						<p><a class="btn btn-large btn-primary" href="stagetwopointtwo.html">Submit</a></p>
+						<p><a class="btn btn-large btn-primary" href="stagetwopointtwo.php">Next</a></p>
                     </div>
                 </div>
             </div>

@@ -99,7 +99,8 @@
 			var cs = document.getElementById("527").value;
 			var cst = document.getElementById("528").value;
 			var rs = document.getElementById("529").value;
-			window.parent.location.href = "getpdf.php?kp="+kp+"&ka="+ka+"&kr="+kr+"&vp="+vp+"&cr="+cr+"&ch="+ch+"&cs="+cs+"&cst="+cst+"&rs="+rs;
+			//window.parent.location.href = "getpdf.php?kp="+kp+"&ka="+ka+"&kr="+kr+"&vp="+vp+"&cr="+cr+"&ch="+ch+"&cs="+cs+"&cst="+cst+"&rs="+rs;
+			window.open("getpdf.php?kp="+kp+"&ka="+ka+"&kr="+kr+"&vp="+vp+"&cr="+cr+"&ch="+ch+"&cs="+cs+"&cst="+cst+"&rs="+rs, '_blank');
 		}
 	</script>
 </head>
@@ -157,7 +158,8 @@
                             <li><a href="stagefivepointtwo.php">Template 2 - Business Model Canvas</a></li>
                         </ul>
                     </li>
-					<li><a href="logout.php">Log Out</a></li>
+					<li><a style="position:fixed; right:200px" >Welcome <?php echo $_SESSION['name']; ?>,</a></li>
+					<li><a style="position:fixed; right:100px" href="logout.php">Log Out</a></li>
                 </ul>
             </div>
             
@@ -299,7 +301,7 @@
 						<h2>Revenue Streams: (9 of 9)</h2>
 						<p><textarea id='529' rows='6' cols='100' onfocus='set9()' onblur='savetodb()' placeholder='For what value are our customers willing to pay? For what do they currently pay? How are they currently paying? How would they prefer to pay? How much does each revenue stream contribute to overall revenues?'></textarea></p>
 						<br/>
-                        <p><a class="btn btn-large btn-primary" href="javascript:void(0)" onclick="getpdf()">Submit</a></p>
+                        <p><a class="btn btn-large btn-primary" href="javascript:void(0)" onclick="getpdf()">Generate PDF</a></p>
 					</div>
 				</div>
 			</div>

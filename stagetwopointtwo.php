@@ -281,7 +281,8 @@
                             <li><a href="stagefivepointtwo.php">Template 2 - Business Model Canvas</a></li>
                         </ul>
                     </li>
-					<li><a href="logout.php">Log Out</a></li>
+					<li><a style="position:fixed; right:200px" >Welcome <?php echo $_SESSION['name']; ?>,</a></li>
+					<li><a style="position:fixed; right:100px" href="logout.php">Log Out</a></li>
                 </ul>
             </div>
             
@@ -299,7 +300,7 @@
 		<p><label><input id="enableTooltip" type="checkbox" checked="checked"></input>Enable tooltip</label></p>
 	</div>
 	<br/>
-	<a class="btn btn-large btn-primary" href="stagetwopointthree.html">Submit</a>
+	<a class="btn btn-large btn-primary" href="stagetwopointthree.php">Next</a>
 	
 	
 	<!-- Collapse
