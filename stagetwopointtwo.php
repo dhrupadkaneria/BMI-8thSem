@@ -289,7 +289,35 @@
         </div>
     </div>
 	
+	 <!-- Carousel
+    =========================-->
 	
+	<div id="myCarousel" class="carousel slide" data-interval="false">
+        
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarouse1" data-slide-to="1"></li>
+           
+        </ol>
+        
+        <div class="carousel-inner">
+            <div class="item active">
+                 <img src="img/slide3.jpg"/>
+                
+            </div>
+			
+         
+        <p><a class="btn btn-large btn-primary" href="stagetwopointthree.php">Next Stage</a></p>
+        
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        
+    
 	<br/><br/><br/>
 	
 	<label>Problems: </label><div id = "mydd"></div>
@@ -300,7 +328,11 @@
 		<p><label><input id="enableTooltip" type="checkbox" checked="checked"></input>Enable tooltip</label></p>
 	</div>
 	<br/>
-	<a class="btn btn-large btn-primary" href="stagetwopointthree.php">Next</a>
+	<a class="btn btn-large btn-primary" href="stagetwopointone.php">Next</a>
+	
+	
+	 </div>
+	
 	
 	
 	<!-- Collapse
