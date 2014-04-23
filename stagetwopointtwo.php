@@ -15,20 +15,6 @@
 	<script src="js/jquery.flot.js"></script>
 	
 	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	textarea
-	{
-		resize:none;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
 	.navbar-default 
 	{
 		background-color: aqua;
@@ -227,7 +213,7 @@
 
 	</script>
 </head>
-<body onload="init()">
+<body onload="init()" background="img/slide6.jpg">
 
 	
 	<!-- Fixes Navigation Bar
@@ -289,6 +275,8 @@
         </div>
     </div>
 	
+<<<<<<< HEAD
+=======
 	 <!-- Carousel
     =========================-->
 	
@@ -318,21 +306,30 @@
         </a>
         
     
+>>>>>>> origin/master
 	<br/><br/><br/>
-	
-	<label>Problems: </label><div id = "mydd"></div>
-	<div id="content">
-		<div class="demo-container">
-			<div id="placeholder" class="demo-placeholder"></div>
+	<div>
+		<div style="position:relative; left:50%"><label>Problems: </label><div id = "mydd"></div></div>
+		<div id="content">
+			<div class="demo-container"style="position:relative; top:10%">
+				<div id="placeholder" class="demo-placeholder"></div>
+			</div>
+			<div style="position:relative; left:50%">
+				<input id="enableTooltip" type="checkbox" checked="checked"></input><label>Enable tooltip</label><br/>
+				<a class="btn btn-large btn-primary" href="stagetwopointthree.php">Next</a>
+			</div>
 		</div>
-		<p><label><input id="enableTooltip" type="checkbox" checked="checked"></input>Enable tooltip</label></p>
+		<br/>
 	</div>
+<<<<<<< HEAD
+=======
 	<br/>
 	<a class="btn btn-large btn-primary" href="stagetwopointone.php">Next</a>
 	
 	
 	 </div>
 	
+>>>>>>> origin/master
 	
 	
 	<!-- Collapse
