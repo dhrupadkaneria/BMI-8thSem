@@ -1,16 +1,28 @@
 <?php
 $uid = $_POST['uid'];
-$pw = $_POST['pw'];
+$pw = md5($_POST['pw']);
 
-if($uid == 'arun' and $pw == 'arun123')
+$conn = mysql_connect('localhost','root','');
+$db = mysql_select_db('bmi',$conn);
+//echo $pw;
+//$fetch = mysql_query("SELECT COUNT(*) FROM `login` WHERE username='$uid' and password='$pw'");
+
+$fetch = mysql_query("SELECT `password` FROM `login` WHERE username='$uid'");
+$row = mysql_fetch_assoc($fetch);
+
+if($row["password"] == $pw)
 {	
 	session_start();
-	$_SESSION['sid']=session_id();
-	$_SESSION['name'] = $uid;
+	$_SESSION['sid'] = session_id();
+	$name = mysql_query("SELECT `fname` FROM `login` WHERE username='$uid'");
+	$nrow = mysql_fetch_assoc($name);
+	$_SESSION['name'] = $nrow["fname"];
 	header("location:index.php");
+	//echo true;
 }
 else
 {
 	header("location:mylogin.html");
+	//echo false;
 }
 ?>

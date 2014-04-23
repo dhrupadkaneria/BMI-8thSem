@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<title>Register</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.js"></script>
+	
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body style="background-color:black">
+		<div class="container" style="width:100%">
+			<div class="component">
+				<ul style="position:relative;left:150px"class="grid">
+					<li>&nbsp </li>
+					<li class="ot-letter-left" style="font-size:8em;width: calc(100% / 6);"><span data-letter="B">B</span></li>
+					<li class="ot-letter-top" style="font-size:8em;width: calc(100% / 6);"><span data-letter="M">M</span></li>
+					<li class="ot-letter-right" style="font-size:8em;width: calc(100% / 6);"><span data-letter="I">I</span></li>
+					<li>&nbsp </li>
+				</ul>
+			</div>
+		</div>
+		<div style="position:absolute; left:40%; top:40%">
+			<form method="post" action="newuser.php">
+				<table>
+					<tr>
+						<td><label>First Name:</label></td>
+						<td><input type="text" name="fname"></td>
+					</tr>
+					<tr>
+						<td><label>Last Name:</label></td>
+						<td><input type="text" name="lname"></td>
+					</tr>
+					<tr>
+						<td><label>Email Id:</label></td>
+						<td><input type="text" name="uid"></td>
+					</tr>
+					<tr>
+						<td><label>Password:</label></td>
+						<td><input type="password" name="pw"></td>
+					</tr>
+				</table>
+				<input style="position:absolute; left:45%; top:110%" class='btn btn-primary' type="submit" value="Register"/>
+			</form>
+		</div>
+	</body>
+</html>
