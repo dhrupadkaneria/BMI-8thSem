@@ -13,6 +13,13 @@ if($fetch == 1)
 	session_start();
 	$_SESSION['sid']=session_id();
 	$_SESSION['name'] = $fname;
+	
+	$newdb = new DOMDocument();
+	$newdb->formatOutput = true;
+	$newdb->load('/database/'.$fname.'-db.xml');
+	$newroot = $newdb->createElement("bmi");
+    $newroot = $newdb->appendChild($newroot);
+	$newdb->save($fname.'-db.xml');
 	header("location:index.php");
 }
 else

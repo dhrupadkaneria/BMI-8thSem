@@ -1,10 +1,12 @@
 <?php
 
 	extract($_GET);
-
+	session_start();
+	$fname = $_SESSION['name'];
 	$doc = new DOMDocument();
 	$doc->formatOutput = true;
-	$doc->load('test.xml');
+	$doc->load('database/'.$fname.'-db.xml');
+	//$doc->load('test.xml');
 	$mynode = $doc->getElementsByTagName('_'.$myid);
 	if($mynode->length > 0)
 	{
@@ -13,7 +15,7 @@
 			if(strcmp($mn->nodeValue,$val) != 0)
 			{
 				$mn->nodeValue = $val;
-				$doc->save('test.xml');
+				$doc->save('database/'.$fname.'-db.xml');
 			}
 		}
 	}
@@ -24,6 +26,6 @@
 		$t = $doc->createTextNode($val);
 		$b = $root->appendChild($b);
 		$t = $b->appendChild($t);
-		$doc->save('test.xml');
+		$doc->save('database/'.$fname.'-db.xml');
 	}
 ?>

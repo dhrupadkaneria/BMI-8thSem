@@ -1,10 +1,12 @@
 <?php
 
 	extract($_GET);
-
+	session_start();
+	$fname = $_SESSION['name'];
 	$doc = new DOMDocument();
 	$doc->formatOutput = true;
-	$doc->load('test.xml');
+	$doc->load('database/'.$fname.'-db.xml');
+	//$doc->load('test.xml');
 	$mynode = $doc->getElementsByTagName('_'.$myid);
 	if($mynode->length > 0)
 	{

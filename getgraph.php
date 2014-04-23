@@ -1,7 +1,9 @@
 <?php
 
 	extract($_GET);
-	$fh = fopen('graph.txt','r');
+	session_start();
+	$fname = $_SESSION['name'];
+	$fh = fopen('database/'.$fname.'-graph.txt','r');
 	while ($line = fgets($fh)) 
 	{
 		echo $line;

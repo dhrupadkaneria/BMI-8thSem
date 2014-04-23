@@ -42,7 +42,6 @@
 		  interval: 2000
 		})
 	});
-	//alert("name is <?php echo $_SESSION['name']; ?>");
 	</script>
 </head>
 
