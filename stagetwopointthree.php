@@ -9,37 +9,11 @@
 
     <title>Stage Two - Template Three</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
-	
-	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	textarea
-	{
-		resize:none;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
-	
 	<script type="text/javascript">
 	
 		var myid = 231;
@@ -161,6 +135,7 @@
                     <div class="carousel-caption">
 						<h1>Stage 2 - Template 3</h1>
                         <h2>User: (1 of 3)</h2>
+						<h3>Describe your final user segment and the reason for selecting it.</h3>
                         <p><textarea id='231' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='Describe your final user segment and why you have chosen to focus on this user'></textarea></p>
                     </div>
                 </div>
@@ -171,6 +146,7 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h2>Problem: (2 of 3)</h2>
+						<h3>Describe your core problem and other related sub-problems.</h3>
 						<p><textarea id='232' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Give a brief description of the core problem and make a list of other related sub-problem'></textarea></p>
                        
                     </div>
@@ -181,7 +157,8 @@
                 <img src="img/slide8.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>Problem statement: (3 of 3)</h2>
+                        <h2>Problem Statement: (3 of 3)</h2>
+						<h3>Give a very precise sentence that summarizes exactly the problem that you want to solve.</h3>
                         <p><textarea id='233' rows='2' cols='100' onfocus='set3()' onblur='savetodb()' placeholder='Formulate one very precise sentence that summarizes exactly the problem you want to solve'></textarea></p>
 						<br/>
 						<p><a class="btn btn-large btn-primary" href="stagethreepointone.php">Next Stage</a></p>

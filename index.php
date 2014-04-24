@@ -10,31 +10,9 @@
     <title>Business Model Innovator - Index</title>
     
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-	
-	<style type="text/css">
-		.navbar-default 
-		{
-			background-color: aqua;
-			border-color: aqua;
-		}
-		.navbar-default .navbar-brand 
-		{
-			color: #777777;
-		}
-		div.carousel-caption
-		{
-			position:absolute;
-			top:20%;
-		}
-		img
-		{
-			height:500px;
-			width:1366px;
-		}
-	</style>
-	
 	<script type="text/javascript">
 	
 	$(document).ready(function() {
@@ -121,19 +99,20 @@
         <div class="carousel-inner">
             
             <div class="item active">
-                <img src="img/slide1.jpg"/>
+                <img src="img/slide9.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Welcome to Business Model Innovator</h1>
+						<h1>Guide: Dr. Kavi Mahesh</h1>
                     </div>
                 </div>
             </div>
             
             <div class="item">
-                <img src="img/slide2.jpg"/>
+                <img src="img/slide7.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Guide: Dr. Kavi Mahesh</h1>
+                        <h1>Final Year Project by:<br/><h1><h2>Dhrupad C Kaneria - 1PI10CS037,<br/>Rahul Handa - 1PI10CS064,<br/>Ayush Bhattacharya - 1PI10CS030</h2>
                     </div>
                 </div>
             </div>
@@ -142,7 +121,7 @@
                 <img src="img/slide3.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Final Year Project by Dhrupad, Rahul and Ayush</h1>
+                        <h3>Contact Us: businessmodelinnovator@gmail.com</h3>
                     </div>
                 </div>
             </div>

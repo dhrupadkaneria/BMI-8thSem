@@ -10,21 +10,10 @@
 	
 	<link type="text/css" rel="stylesheet" href="css/examples.css"/>
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/jquery.flot.js"></script>
-	
-	<style type="text/css">
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
 	
 	<script type="text/javascript">
 	
@@ -277,7 +266,14 @@
 	
 	<br/><br/><br/>
 	<div>
-		<div style="position:relative; left:50%"><label>Problems: </label><div id = "mydd"></div></div>
+		<div style="position:relative; left:50%">
+			<label>Problems: </label>
+			<div id = "mydd"></div>
+		</div>
+		<div style="position:relative; left:25%">
+			<h4>Note: Think carefully before plotting the problems onto the graph. Once plotted, it cannot be changed.</h4>
+			<h5>x-axis : Importance of the problem<br/>y-axis : Frequency of occurance of the problem</h5>
+		</div>
 		<div id="content">
 			<div class="demo-container"style="position:relative; top:10%">
 				<div id="placeholder" class="demo-placeholder"></div>
@@ -305,7 +301,7 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-					The frequency of the occurring problem can be selected from the drop down menu. The frequency factor is plotted on the Y-axis. One should think of concentrating on such a problem which has high frequency of occurring. 
+					The frequency factor is plotted on the Y-axis. One should think of concentrating on such a problem which has high frequency of occurring. 
                 </div>
             </div>
         </div>
@@ -319,7 +315,7 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-					The importance of the problem can also be selected from the drop down menu. The importance factor is plotted on the X-axis. Higher the importance, means it affects large amount of people. Hence problems with higher frequency and high importance should be focussed on.
+					The importance factor is plotted on the X-axis. Higher the importance, means it affects large amount of people. Hence problems with higher frequency and high importance should be focussed on.
                 </div>
             </div>
         </div>

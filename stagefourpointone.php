@@ -10,25 +10,10 @@
 	
 	<link type="text/css" rel="stylesheet" href="css/examples.css"/>
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/jquery.flot.js"></script>
-	
-	<style type="text/css">
-	textarea
-	{
-		resize:none;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
 	
 	<script type="text/javascript">
 	
@@ -238,7 +223,14 @@
 	
 	<br/><br/><br/>
 	<div>
-		<div style="position:relative; left:45%"><label>Ideas:&nbsp;</label><input id = "ide" type="text"></div>
+		<div style="position:relative; left:45%">
+			<label>Ideas:&nbsp;</label>
+			<input id = "ide" type="text">
+		</div>
+		<div style="position:relative; left:25%">
+			<h4>Note: Think carefully before plotting the Ideas onto the graph. Once plotted, it cannot be changed.</h4>
+			<h5>x-axis : Value of the Idea<br/>y-axis : Uniqueness of the Idea</h5>
+		</div>
 		<div id="content">
 			<div class="demo-container"style="position:relative; top:10%">
 				<div id="placeholder" class="demo-placeholder"></div>
@@ -266,7 +258,7 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-					The value of the occurring problem can be selected from the drop down menu
+					The Value factor is plotted on the X-axis. Higher the value, means it affects large amount of people. Hence ideas with higher value and high uniqueness should be focussed on.
                 </div>
             </div>
         </div>
@@ -280,7 +272,7 @@
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-					The uniqueness of the problem can also be selected from the drop down menu
+					The Uniqueness factor is plotted on the Y-axis. One should think of concentrating on such a Idea which has high Uniqueness.
                 </div>
             </div>
         </div>
@@ -294,8 +286,8 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-					Tooltip gives you details of the problem and its corresponding value and uniqueness values that you have selected. When you mark check on the enable tooltip button it will show the coordinate values of value and uniqueness next to the point
-					plotted on the graph
+					Tooltip gives you details of the Idea and its corresponding value and uniqueness values that you have selected. When you mark check on the enable tooltip button it will show the coordinate values of value and uniqueness next to the point
+					plotted on the graph.
 				</div>
             </div>
         </div>

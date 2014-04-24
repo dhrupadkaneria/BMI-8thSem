@@ -1,0 +1,23 @@
+.navbar-default 
+{
+	background-color: #003399;
+	border-color: #003399;
+}
+.navbar-default .navbar-brand 
+{
+	color: #FFFFFF;
+}
+div.carousel-caption
+{
+	position:absolute;
+	top:20%;
+}
+img
+{
+	height:500px;
+	width:1366px;
+}
+textarea
+{
+	resize:none;
+}

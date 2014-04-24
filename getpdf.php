@@ -3,11 +3,16 @@
 	require 'fpdf17/fpdf.php';
 	extract($_GET);
 
+	session_start();
+	$name = $_SESSION['name'];
+	
 	$pdf = new FPDF('P', 'pt', 'A4');
 	$pdf->AddPage();
 
 	$pdf->SetFont('Times', 'B', 16);
 	$pdf->Cell(0,10,'My Business Model', 0, 2, 'C');
+	$pdf->Ln();
+	$pdf->Cell(0,10,'By '.$name, 0, 2, 'C');
 
 	$pdf->SetFont('Times', '', 12);
 	

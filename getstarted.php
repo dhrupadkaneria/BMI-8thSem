@@ -10,34 +10,9 @@
 
     <title>Get Started</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-	
-	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
-	
-	<script type="text/javascript">
-	
-	</script>
 </head>
 
 <body>
@@ -120,7 +95,7 @@
                 <div class="container">
                     <div class="carousel-caption">
 						<h1>Getting Started with Business Model Innovator</h1>
-						<h2>Introduction</h2>
+						<h2>Introduction:</h2>
 						<h4><p>This web based application will take you through various stages involved in coming up with a business model.</p></h4>
 					</div>
                 </div>
@@ -130,8 +105,8 @@
                 <img src="img/slide3.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Stages Involved</h1>
-						<ol>
+                        <h1>Stages Involved:</h1>
+						<ol style="position:absolute; left:35%">
 							<li>Understanding the problem</li>
 							<li>Identify</li>
 							<li>Problem selection</li>
@@ -145,10 +120,13 @@
             </div>
             
             <div class="item">
-                <img src="img/slide4.jpg"/>
+                <img src="img/slide7.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Lets get started</h1>
+                        <h2><p>You have an idea but don't know how to manage it? How to make money from it?</p></h2>
+						<h3><p>Follow the steps and you will see that your idea will fetch you money. :)</p></h3>
+						<br/>
+						<h4><p>We shall take you through a simple example to give you overview of what has to be done. Let us take an example of Indian Agriculture. We all know that India is an agricultural country. Each year hundreds of farmers commit suicide due to various reasons. One of the reason is that he doesn't get proper price for his crops. So let us try to solve this problem.</p></h4>
 						<br/>
                         <p><a class="btn btn-large btn-primary" href="stageonepointone.php">Get Started</a></p>
                     </div>

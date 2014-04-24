@@ -10,36 +10,11 @@
 
     <title>Stage One - Template One</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
-	
-	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	textarea
-	{
-		resize:none;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
 	
 	<script type="text/javascript">
 		function createdropdown()
@@ -206,7 +181,8 @@
                 <img src="img/slide5.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>Challenges: (3 of 4)</h2>
+                        <h2>Challenges present in your domain: (3 of 4)</h2>
+						<h4>Please click the "submit" button after entering the challenges.</h4>
 						<div id = 'a1'>
 							<label> #1 :&nbsp;&nbsp;</label><input id = "1131" type="text" onblur="savedata(event)"/><br/>
 							<label> #2 :&nbsp;&nbsp;</label><input id = "1132" type="text" onblur="savedata(event)"/><br/>
@@ -294,7 +270,7 @@
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-                    The various challenges are to be written here. The main challenge is broken down into sub-challenges and written here. For the specified probelm the sub-challenges will be the farmers not exposed to new technologies, improper transportation of the produce by the farmers to the market, not updated with the latest prices of his crops, involvement of the commission agent etc. 
+                    The various challenges are to be written here. The main challenge is broken down into sub-challenges and written here. For the specified problem the sub-challenges will be the farmers not exposed to new technologies, improper transportation of the produce by the farmers to the market, not updated with the latest prices of his crops, involvement of the commission agent etc. 
                 </div>
             </div>
         </div>

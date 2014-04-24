@@ -10,33 +10,11 @@
 
     <title>Stage Three - Template One</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
-	
-	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
-	
 	<script type="text/javascript">
 		var myid = 311;
 		function set1()
@@ -149,7 +127,7 @@
                 <div class="container">
                     <div class="carousel-caption">
 						<h1>Stage 3 - Template 1</h1>
-						<h2>Technologies Available</h2>
+						<h2>Technologies Available: (1 of 2)</h2>
 						<p><textarea id='311' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='Describe the available technologies that are present in the market related to your domain of focus?'></textarea></p>
 					</div>
                 </div>
@@ -159,7 +137,7 @@
                 <img src="img/slide9.jpg"/>
                 <div class="container">
                     <div class="carousel-caption">
-                        <h2>Technologies Known</h2>
+                        <h2>Technologies Known: (2 of 2)</h2>
 						<p><textarea id='312' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Write down the technologies from the available technologies which you already know?'></textarea></p>
 						<br/>
                         <p><a class="btn btn-large btn-primary" href="stagefourpointone.php">Next Stage</a></p>

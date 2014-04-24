@@ -10,37 +10,11 @@
 
     <title>Stage Four - Template Two</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
-	
-	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	textarea
-	{
-		resize:none;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
-	
 	<script type="text/javascript">
 	
 		var myid = 421;

@@ -10,37 +10,11 @@
 
     <title>Stage Two - Template One</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
-	
-	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	textarea
-	{
-		resize:none;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
-	
 	<script type="text/javascript">
 		
 		function createdropdown1()
@@ -186,7 +160,8 @@
                     <div class="carousel-caption">
 						<h1>Stage 2 - Template 1</h1>
                         <h2>Users: (1 of 4)</h2>
-						<h3>Based on the sub-challenges from previous stage - list the different user segments you have identified</h3>
+						<h3>Based on the sub-challenges from previous stage - list the different user segments you have identified.</h3>
+						<h4>Please click the "submit" button after entering the users.</h4>
                         <div id = "a1">
 							<label> #1 :&nbsp;&nbsp;</label><input id = "2111" type="text" onblur="savedata(event)"/><br/>
 							<label> #2 :&nbsp;&nbsp;</label><input id = "2112" type="text" onblur="savedata(event)"/><br/>

@@ -10,34 +10,9 @@
 
     <title>Stage Five - Template One</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
-	
-	<style type="text/css">
-	img
-	{
-		height:500px;
-		width:1366px;
-	}
-	div.carousel-caption
-	{
-		position:absolute;
-		top:15%;
-	}
-	.navbar-default 
-	{
-		background-color: aqua;
-		border-color: aqua;
-	}
-	.navbar-default .navbar-brand 
-	{
-		color: #777777;
-	}
-	</style>
-	
-	<script type="text/javascript">
-	
-	</script>
 </head>
 
 <body>
@@ -135,7 +110,7 @@
                     <div class="carousel-caption">
 						<h1>Stage 5 - Template 1</h1>
                         <h2>Types of Business Models: (1 of 3)</h2>
-						<ol>
+						<ol style="position:absolute; left:35%">
 							<li>Hook and Bait Model</li>
 							<li>Freemium</li>
 							<li>Connection Platform</li>
