@@ -17,12 +17,12 @@ if($row["password"] == $pw)
 	$name = mysql_query("SELECT `fname` FROM `login` WHERE username='$uid'");
 	$nrow = mysql_fetch_assoc($name);
 	$_SESSION['name'] = $nrow["fname"];
-	header("location:index.php");
+	header("location:myindex.php");
 	//echo true;
 }
 else
 {
-	header("location:mylogin.html");
+	header("location:index.html");
 	//echo false;
 }
 ?>

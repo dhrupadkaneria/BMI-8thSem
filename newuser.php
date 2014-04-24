@@ -20,7 +20,7 @@ if($fetch == 1)
 	$newroot = $newdb->createElement("bmi");
     $newroot = $newdb->appendChild($newroot);
 	$newdb->save('database/'.$fname.'-db.xml');
-	header("location:index.php");
+	header("location:myindex.php");
 }
 else
 {

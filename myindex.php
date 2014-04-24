@@ -40,7 +40,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-					<li><a href="index.php">Home</a></li>
+					<li><a href="myindex.php">Home</a></li>
 					<li><a href="getstarted.php">Get Started</a></li>
 					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stage 1 <b class="caret"></b></a>
