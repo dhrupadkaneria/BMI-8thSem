@@ -16,14 +16,15 @@ if($fetch == 1)
 	
 	$newdb = new DOMDocument();
 	$newdb->formatOutput = true;
-	$newdb->load('/database/'.$fname.'-db.xml');
+	//$newdb->load('database/'.$fname.'-db.xml');
 	$newroot = $newdb->createElement("bmi");
     $newroot = $newdb->appendChild($newroot);
-	$newdb->save($fname.'-db.xml');
+	$newdb->save('database/'.$fname.'-db.xml');
 	header("location:index.php");
 }
 else
 {
-	header("location:mylogin.html");
+	echo "<script>alert('Username already exists');window.location.href = 'newuser.html';</script>";
+	//header("location:mylogin.html");
 }
 ?>
