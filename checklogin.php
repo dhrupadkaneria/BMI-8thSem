@@ -3,6 +3,7 @@ $uid = $_POST['uid'];
 $pw = md5($_POST['pw']);
 
 $conn = mysql_connect('localhost','root','');
+//$conn = mysql_connect('u926644367_bmi','u926644367_root','dhrupad123');
 $db = mysql_select_db('bmi',$conn);
 //echo $pw;
 //$fetch = mysql_query("SELECT COUNT(*) FROM `login` WHERE username='$uid' and password='$pw'");

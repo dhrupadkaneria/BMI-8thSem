@@ -333,6 +333,6 @@
 	}
 	else
 	{
-		header("location:mylogin.html");
+		header("location:index.html");
 	}
 ?>
