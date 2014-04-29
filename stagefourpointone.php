@@ -237,7 +237,7 @@
 			</div>
 			<div style="position:relative; left:50%">
 				<input id="enableTooltip" type="checkbox" checked="checked"></input><label>Enable tooltip</label><br/>
-				<a class="btn btn-large btn-primary" href="stagefourpointtwo.php">Next</a>
+				<a class="btn btn-large btn-primary" href="stagefourpointonenext.php">Next</a>
 			</div>
 		</div>
 		<br/>

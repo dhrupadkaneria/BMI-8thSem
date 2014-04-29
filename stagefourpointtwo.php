@@ -49,6 +49,31 @@
 				getfromdb();
 			}
 		}
+		function update(evt)
+		{
+			savetodb();
+			var quantity;
+			var myxmlhttp=new XMLHttpRequest();
+			myxmlhttp.onreadystatechange = function(){};
+			if(myid == 425)
+			{
+				quantity = document.getElementById("425").value;
+				myxmlhttp.open("GET","storetodb.php?myid=528&val="+quantity,false);
+				myxmlhttp.send();
+			}
+			else if(myid == 426)
+			{
+				quantity = document.getElementById("426").value;
+				myxmlhttp.open("GET","storetodb.php?myid=529&val="+quantity,false);
+				myxmlhttp.send();
+			}
+			else if(myid == 422)
+			{
+				quantity = document.getElementById("422").value;
+				myxmlhttp.open("GET","storetodb.php?myid=522&val="+quantity,false);
+				myxmlhttp.send();
+			}
+		}
 	</script>
 </head>
 
@@ -177,7 +202,7 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h2>Solution: (2 of 6)</h2>
-						 <p><textarea id='422' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='What is your idea and how does it work? What is the core functionality of your idea? What is your unique value proposition to the user? How will you market your solution and reach the user?'></textarea></p>
+						 <p><textarea id='422' rows='6' cols='100' onfocus='set2()' onblur='update(event)' placeholder='What is your idea and how does it work? What is the core functionality of your idea? What is your unique value proposition to the user? How will you market your solution and reach the user?'></textarea></p>
                     </div>
                 </div>
             </div>
@@ -207,7 +232,7 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h2>Costs: (5 of 6)</h2>
-						<p><textarea id='425' rows='6' cols='100' onfocus='set5()' onblur='savetodb()' placeholder='What will it cost to develop your solution? What are the ongoing fixed + variable costs?'></textarea></p>   
+						<p><textarea id='425' rows='6' cols='100' onfocus='set5()' onblur='update(event)' placeholder='What will it cost to develop your solution? What are the ongoing fixed + variable costs?'></textarea></p>   
 					</div>
 				</div>
 			</div>		
@@ -216,7 +241,7 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h2>Revenue: (6 of 6)</h2>
-						<p><textarea id='426' rows='6' cols='100' onfocus='set6()' onblur='savetodb()' placeholder='How are you going to make money? Who pays? How much will they pay? How do they pay (one-time fee/ongoing subscription/license..)?'></textarea></p>
+						<p><textarea id='426' rows='6' cols='100' onfocus='set6()' onblur='update(event)' placeholder='How are you going to make money? Who pays? How much will they pay? How do they pay (one-time fee/ongoing subscription/license..)?'></textarea></p>
 						<br/>
 						<p><a class="btn btn-large btn-primary" href="stagefivepointone.php">Next Stage</a></p>
 					</div>

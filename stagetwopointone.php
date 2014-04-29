@@ -15,6 +15,43 @@
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
+	<style type="text/css">
+		select 
+		{
+			padding:3px;
+			margin: 0;
+			-webkit-border-radius:4px;
+			-moz-border-radius:4px;
+			border-radius:4px;
+			-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			background: #f8f8f8;
+			color:#888;
+			border:none;
+			outline:none;
+			display: inline-block;
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			appearance:none;
+			cursor:pointer;
+		}
+		label {position:relative}
+		label:after {
+			content:'<>';
+			font:11px "Consolas", monospace;
+			color:#aaa;
+			-webkit-transform:rotate(90deg);
+			-moz-transform:rotate(90deg);
+			-ms-transform:rotate(90deg);
+			transform:rotate(90deg);
+			right:8px; top:2px;
+			padding:0 0 2px;
+			border-bottom:1px solid #ddd;
+			position:absolute;
+			pointer-events:none;
+		}
+	</style>
 	<script type="text/javascript">
 		
 		function createdropdown1()
@@ -34,6 +71,7 @@
 				}
 			}
 			mydiv.appendChild(newnode);
+			alert("Your user choices have been saved.\nPlease go to the next wizard to select a precise user.");
 		}
 		function savedata(e)
 		{
@@ -58,6 +96,18 @@
 			}
 			myid = 214;
 			getfromdb();
+		}
+		function adduser()
+		{
+			var e = document.getElementById("mydropdown1");
+			var quantity= e.options[e.selectedIndex].text;
+			xmlhttp=new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function(){};
+			alert("The user you have chosen is: "+quantity+"\nPlease go to the next wizard.");
+			xmlhttp.open("GET","storetodb.php?myid=231&val="+quantity,false);
+			xmlhttp.send();
+			xmlhttp.open("GET","storetodb.php?myid=423&val="+quantity,false);
+			xmlhttp.send();
 		}
 	</script>
 </head>
@@ -184,7 +234,11 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h2>Select Your main user segment: (2 of 4)</h2>
-						<div id = 'b1'>
+						<label id = 'b1' onblur="adduser()">
+						</label>
+						<div>
+							<br/>
+							<input type="button" class='btn btn-primary' onclick="adduser()" value="Confirm User"/>
 						</div>
 					</div>
                 </div>
@@ -220,6 +274,9 @@
 						<p><textarea id='214' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Data points from expert interviews and online research'></textarea></p>
 						<br/>
 						<p><a class="btn btn-large btn-primary" href="stagetwopointtwo.php">Next</a></p>
+						<div>
+							<a href="javascript:window.open('getinfrnet.php?myid=231&myword=new-insights','mywindowtitle','width=500,height=450')" style="color:white;">Know more</a>
+						</div>
                     </div>
                 </div>
             </div>

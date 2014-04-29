@@ -14,7 +14,44 @@
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 	<script src="js/jquery.flot.js"></script>
-	
+	<style type="text/css">
+		select 
+		{
+			padding:3px;
+			margin: 0;
+			-webkit-border-radius:4px;
+			-moz-border-radius:4px;
+			border-radius:4px;
+			-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			background: #f8f8f8;
+			color:#888;
+			border:none;
+			outline:none;
+			display: inline-block;
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			appearance:none;
+			cursor:pointer;
+		}
+		label {position:relative}
+		label:after {
+			content:'<>';
+			font:11px "Consolas", monospace;
+			color:#aaa;
+			-webkit-transform:rotate(90deg);
+			-moz-transform:rotate(90deg);
+			-ms-transform:rotate(90deg);
+			transform:rotate(90deg);
+			right:8px; top:2px;
+			padding:0 0 2px;
+			border-bottom:1px solid #ddd;
+			position:absolute;
+			pointer-events:none;
+		}
+
+	</style>
 	<script type="text/javascript">
 	
 	var priority = [];
@@ -202,7 +239,7 @@
 
 	</script>
 </head>
-<body onload="init()" background="img/slide6.jpg">
+<body onload="init()" background="img/slide12.jpg">
 
 	
 	<!-- Fixes Navigation Bar
@@ -268,7 +305,7 @@
 	<div>
 		<div style="position:relative; left:50%">
 			<label>Problems: </label>
-			<div id = "mydd"></div>
+			<label id = "mydd"></label>
 		</div>
 		<div style="position:relative; left:25%">
 			<h4>Note: Think carefully before plotting the problems onto the graph. Once plotted, it cannot be changed.</h4>
@@ -280,7 +317,7 @@
 			</div>
 			<div style="position:relative; left:50%">
 				<input id="enableTooltip" type="checkbox" checked="checked"></input><label>Enable tooltip</label><br/>
-				<a class="btn btn-large btn-primary" href="stagetwopointthree.php">Next</a>
+				<a class="btn btn-large btn-primary" href="stagetwopointtwonext.php">Next</a>
 			</div>
 		</div>
 		<br/>

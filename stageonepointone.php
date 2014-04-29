@@ -15,7 +15,43 @@
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
-	
+	<style type="text/css">
+		select 
+		{
+			padding:3px;
+			margin: 0;
+			-webkit-border-radius:4px;
+			-moz-border-radius:4px;
+			border-radius:4px;
+			-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			background: #f8f8f8;
+			color:#888;
+			border:none;
+			outline:none;
+			display: inline-block;
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			appearance:none;
+			cursor:pointer;
+		}
+		label {position:relative}
+		label:after {
+			content:'<>';
+			font:11px "Consolas", monospace;
+			color:#aaa;
+			-webkit-transform:rotate(90deg);
+			-moz-transform:rotate(90deg);
+			-ms-transform:rotate(90deg);
+			transform:rotate(90deg);
+			right:8px; top:2px;
+			padding:0 0 2px;
+			border-bottom:1px solid #ddd;
+			position:absolute;
+			pointer-events:none;
+		}
+	</style>
 	<script type="text/javascript">
 		function createdropdown()
 		{
@@ -34,6 +70,7 @@
 				}
 			}
 			mydiv.appendChild(newnode);
+			alert("The challenges have been saved.\nPlease go to the next wizard to select a particular challenge.");
 		}
 		function savedata(e)
 		{
@@ -61,10 +98,17 @@
 				getfromdb();
 			}
 		}
+		function addchallenge()
+		{
+			var e = document.getElementById("mydropdown");
+			var quantity= e.options[e.selectedIndex].text;
+			alert("The challenge that you have chosen is: "+quantity+"\nPlease go to the next wizard.");
+		}
 	</script>
 </head>
 
 <body onload="init()">
+   
    
 	<!-- Fixes Navigation Bar
     ======================================================-->
@@ -163,7 +207,11 @@
 						<h1>Stage 1 - Template 1</h1>
                         <h2>Key facts & data: (1 of 4)</h2>
                         <p><textarea id='111' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='What are the main facts, figures, statistics, data points and background information of relevance here?'></textarea></p>
-                    </div>
+						<div>
+							<!--<a href="getinfrnet.php?myid=111&myword=technology" target="_blank" style="color:black;">Know More</a>-->
+							<a href="javascript:window.open('getinfrnet.php?myid=111&myword=key-facts','mywindowtitle','width=500,height=450')" style="color:white;">Know more</a>
+						</div>
+					</div>
                 </div>
             </div>
             
@@ -173,7 +221,11 @@
                     <div class="carousel-caption">
                         <h2>Insights (Research/Observe): (2 of 4)</h2>
                         <p><textarea id='112' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='List below anything you have researched or observed which may be useful in understanding the case? Consider environmental technology and business trends. Can you think of failure or success stories in this space?'></textarea></p>
-                    </div>
+                    <div>
+							<!--<a href="getinfrnet.php?myid=111&myword=technology" target="_blank" style="color:black;">Know More</a>-->
+							<a href="javascript:window.open('getinfrnet.php?myid=112&myword=insights-research-observe','mywindowtitle','width=500,height=450')" style="color:white;">Know more</a>
+					</div>
+					</div>
                 </div>
             </div>
             
@@ -208,10 +260,15 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <h2>Select a particular Challenge that will be focussed: (4 of 4)</h2>
-						<div id = 'b1'>
+						<label id = 'b1'>
+						</label>
+						<br/><br/>
+						<div style="position:absolute; left:60%;">
+							<!--<a href="getinfrnet.php?myid=111&myword=technology" target="_blank" style="color:black;">Know More</a>-->
+							<a href="javascript:window.open('getinfrnet.php?myid=1131&myword=challenges','mywindowtitle','width=500,height=450')" style="color:black;">Know more</a>
+							<div></div>
 						</div>
-						<br/>
-                        <p><a class="btn btn-large btn-primary" href="stagetwopointone.php">Next Stage</a></p>
+                        <p><a class="btn btn-large btn-primary" href="stagetwopointone.php" onclick="addchallenge()">Next Stage</a></p>
 					</div>
                 </div>
             </div>

@@ -29,6 +29,25 @@
 		{
 			myid = 233;
 		}
+		function updateuser(evt)
+		{
+			savetodb();
+			var quantity;
+			var myxmlhttp=new XMLHttpRequest();
+			myxmlhttp.onreadystatechange = function(){};
+			if(myid == 231)
+			{
+				quantity = document.getElementById("231").value;
+				myxmlhttp.open("GET","storetodb.php?myid=423&val="+quantity,false);
+				myxmlhttp.send();
+			}
+			else if(myid == 232)
+			{
+				quantity = document.getElementById("232").value;
+				myxmlhttp.open("GET","storetodb.php?myid=421&val="+quantity,false);
+				myxmlhttp.send();
+			}
+		}
 		function init()
 		{
 			for(myid = 231; myid <= 233; ++myid)
@@ -136,7 +155,7 @@
 						<h1>Stage 2 - Template 3</h1>
                         <h2>User: (1 of 3)</h2>
 						<h3>Describe your final user segment and the reason for selecting it.</h3>
-                        <p><textarea id='231' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='Describe your final user segment and why you have chosen to focus on this user'></textarea></p>
+                        <p><textarea id='231' rows='6' cols='100' onfocus='set1()' onblur='updateuser(event)' placeholder='Describe your final user segment and why you have chosen to focus on this user'></textarea></p>
                     </div>
                 </div>
             </div>
@@ -147,7 +166,7 @@
                     <div class="carousel-caption">
                         <h2>Problem: (2 of 3)</h2>
 						<h3>Describe your core problem and other related sub-problems.</h3>
-						<p><textarea id='232' rows='6' cols='100' onfocus='set2()' onblur='savetodb()' placeholder='Give a brief description of the core problem and make a list of other related sub-problem'></textarea></p>
+						<p><textarea id='232' rows='6' cols='100' onfocus='set2()' onblur='updateuser(event)' placeholder='Give a brief description of the core problem and make a list of other related sub-problem'></textarea></p>
                        
                     </div>
                 </div>

@@ -15,7 +15,6 @@
     <script src="js/bootstrap.js"></script>
 	<script src="js/storetodb.js"></script>
 	<script src="js/getfromdb.js"></script>
-	
 	<script type="text/javascript">
 	
 		var myid = 521;

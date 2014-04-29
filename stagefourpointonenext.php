@@ -4,19 +4,134 @@
 	{
 ?>
 <!DOCTYPE html>
-
 <html>
 <head>
+	<title>Stage Four - Template One</title>
 
-    <title>Get Started</title>
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 	<link type="text/css" rel="stylesheet" href="css/general.css" />
 	<script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+	<style type="text/css">
+		select 
+		{
+			padding:3px;
+			margin: 0;
+			-webkit-border-radius:4px;
+			-moz-border-radius:4px;
+			border-radius:4px;
+			-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			background: #f8f8f8;
+			color:#888;
+			border:none;
+			outline:none;
+			display: inline-block;
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			appearance:none;
+			cursor:pointer;
+		}
+		label {position:relative}
+		label:after {
+			content:'<>';
+			font:11px "Consolas", monospace;
+			color:#aaa;
+			-webkit-transform:rotate(90deg);
+			-moz-transform:rotate(90deg);
+			-ms-transform:rotate(90deg);
+			transform:rotate(90deg);
+			right:8px; top:2px;
+			padding:0 0 2px;
+			border-bottom:1px solid #ddd;
+			position:absolute;
+			pointer-events:none;
+		}
+	</style>
+	<script type="text/javascript">
+		var str1 = str2 = "";
+		function lineDistance(x1, y1)
+		{
+			return Math.sqrt((x1 * x1) + (y1 * y1) );
+		}
+		function init()
+		{
+			var d1 = d2 = d = 0;
+			var s1 = s2 = s = "";
+			var getgraph = new XMLHttpRequest();
+			getgraph.onreadystatechange = function()
+			{
+				if (getgraph.readyState==4 && getgraph.status==200)
+				{
+					lines = getgraph.responseText.split("\n");
+					for(k = 0; k < lines.length; ++k)
+					{
+						retval = lines[k].split(";");
+						if(retval[0] == 2 && retval[1] != "")
+						{
+							d = lineDistance(retval[2], retval[3]);
+							if(d > d1)
+							{
+								d2 = d1;
+								d1 = d;
+								s2 = s1;
+								s1 = "Idea: "+retval[1]+"&nbsp;&nbsp;&nbsp;Value: "+retval[2]+"&nbsp;&nbsp;&nbsp;Uniqueness: "+retval[3];
+								str2 = str1;
+								str1 = retval[1];
+							}
+							else if(d > d2)
+							{
+								d2 = d;
+								s2 = "Idea: "+retval[1]+"&nbsp;&nbsp;&nbsp;Value: "+retval[2]+"&nbsp;&nbsp;&nbsp;Uniqueness: "+retval[3];
+								str2 = retval[1];
+							}
+						}
+					}
+				}
+			};
+			getgraph.open("GET","getgraph.php",false);
+			getgraph.send();
+			
+			var mydiv = document.getElementById('ideaselect');
+			var newnode = document.createElement('select');
+			newnode.id = "myselect";
+			var newopt = document.createElement('option');
+			newopt.innerHTML = s1;
+			if(newopt.innerHTML != '')
+			{
+				newnode.appendChild(newopt);
+			}
+			newopt = document.createElement('option');
+			newopt.innerHTML = s2;
+			if(newopt.innerHTML != '')
+			{
+				newnode.appendChild(newopt);
+			}
+			mydiv.appendChild(newnode);
+		}
+		function solution()
+		{
+			var e = document.getElementById("myselect");
+			var quantity= e.options[e.selectedIndex].text;
+			xmlhttp=new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function(){};
+			if(e.selectedIndex == 0)
+			{
+				var value = str1;
+			}
+			else if(e.selectedIndex == 1)
+			{
+				var value = str2;
+			}
+			alert("The idea that you have chosen is: "+value);
+			xmlhttp.open("GET","storetodb.php?myid=422&val="+value,false);
+			xmlhttp.send();
+		}
+	</script>
 </head>
+<body onload="init()" background="img/slide12.jpg">
 
-<body>
-   
 	<!-- Fixes Navigation Bar
     ======================================================-->
     
@@ -75,74 +190,23 @@
             
         </div>
     </div>
+
 	
+	<br/><br/><br/>
+	<div>
+		<div style="position:relative; left:20%; width:65%">
+			<h3>Based on the idea that you have plotted on the previous page, we find that one of the following two ideas are likely to be your solution.</h3><br/>
+			<h4>Please choose one of the given idea to proceed further. You can always change it as you go further.</h4>
+		</div>
+		<br/><br/>
+		<div style="position:relative; left:30%">
+			<label><div id="ideaselect"></div><label>
+			<br/><br/>
+			<a style="position:relative; left:30%" class="btn btn-large btn-primary" href="stagefourpointtwo.php" onclick="solution()">Next</a>
+		</div>
+		<br/>
+	</div>
 	
-    <!-- Carousel
-    =========================-->
-    
-    <div id="myCarousel" class="carousel slide" data-interval="false">
-        
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        
-        <div class="carousel-inner">
-            
-            <div class="item active">
-                <img src="img/slide2.jpg"/>
-                <div class="container">
-                    <div class="carousel-caption">
-						<h1>Getting Started with Business Model Innovator</h1>
-						<h2>Introduction:</h2>
-						<h4><p>This web based application will take you through various stages involved in coming up with a business model.</p></h4>
-					</div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <img src="img/slide3.jpg"/>
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Stages Involved:</h1>
-						<ol style="position:absolute; left:35%">
-							<li>Understanding the problem</li>
-							<li>Identify</li>
-							<li>Problem selection</li>
-							<li>Problem description</li>
-							<li>Technology</li>
-							<li>Idea selection</li>
-							<li>Idea description</li>
-						</ol>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="item">
-                <img src="img/slide7.jpg"/>
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h2><p>You have an idea but don't know how to manage it? How to make money from it?</p></h2>
-						<h3><p>Follow the steps and you will see how your idea can generate revenue.</p></h3>
-						<br/>
-						<h4><p>We shall take you through a simple example to give you overview of what has to be done. Let us take an example of Indian Agriculture. We all know that India is an agricultural country. Each year hundreds of farmers commit suicide due to various reasons. One of the reason is that he doesn't get proper price for his crops. So let us try to solve this problem.</p></h4>
-						<br/>
-                        <p><a class="btn btn-large btn-primary" href="stageonepointone.php">Get Started</a></p>
-                    </div>
-                </div>
-            </div>  
-        </div>
-        
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-        
-    </div>
 	
 	
 	<!-- Footer and Modal
@@ -165,7 +229,7 @@
                                 <h2>Terms and Conditions</h2>
                             </div>
                             <div class="modal-body">
-                                <p>These terms and conditions shall govern your use of our website.By using our website, you accept these terms and conditions in full accordingly, if you disagree with these terms and conditions or any part of these terms and conditions, you must not use our website.[Our website uses sessions; by using our website or agreeing to these terms and conditions, you consent to our use of sessions</p>
+                               <p>These terms and conditions shall govern your use of our website.By using our website, you accept these terms and conditions in full accordingly, if you disagree with these terms and conditions or any part of these terms and conditions, you must not use our website.[Our website uses sessions; by using our website or agreeing to these terms and conditions, you consent to our use of sessions</p>
 								<p> You may view pages from our website in a web browser, download pdfs from our website, view video files from our website. You may only use our website for your business purposes, and you must not use our website for any other purposes. </p>
                             </div>
                             <div class="modal-footer">
@@ -178,10 +242,8 @@
             </div>
         </div>
     </div>
-	
 </body>
 </html>
-
 <?php
 	}
 	else

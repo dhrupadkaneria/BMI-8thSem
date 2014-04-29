@@ -6,7 +6,6 @@
 	$doc = new DOMDocument();
 	$doc->formatOutput = true;
 	$doc->load('database/'.$fname.'-db.xml');
-	//$doc->load('test.xml');
 	$mynode = $doc->getElementsByTagName('_'.$myid);
 	if($mynode->length > 0)
 	{

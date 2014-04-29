@@ -1,3 +1,4 @@
+window.global_str = "";
 function getfromdb()
 {
 	xmlreq = new XMLHttpRequest();
@@ -11,5 +12,6 @@ function processReq()
 	{
 		//alert(myid);
 		document.getElementById(myid).value = xmlreq.responseText;
+		global_str = xmlreq.responseText;
 	}
 }

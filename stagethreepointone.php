@@ -129,6 +129,10 @@
 						<h1>Stage 3 - Template 1</h1>
 						<h2>Technologies Available: (1 of 2)</h2>
 						<p><textarea id='311' rows='6' cols='100' onfocus='set1()' onblur='savetodb()' placeholder='Describe the available technologies that are present in the market related to your domain of focus?'></textarea></p>
+						<div style="position:absolute; left:60%;">
+							<a href="javascript:window.open('getinfrnet.php?myid=233&myword=technology','mywindowtitle','width=500,height=450')" style="color:black;">Know more</a>
+							<div></div>
+						</div>
 					</div>
                 </div>
             </div>
