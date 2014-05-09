@@ -1,0 +1,8 @@
+
+1;Limited funds;8.05;6.81
+1;Parental pressure;2.99;2.58
+1;No COD service;9.04;7.70
+1;Time factor for delivery;8.99;7.02
+1;Quality of the product;9.49;9.06
+2;Books via paypal account;7.00;3.99
+2;Trendy posters and pay through the delivery boy by giving your account details;7.76;7.91

@@ -13,6 +13,7 @@ if($fetch == 1)
 	session_start();
 	$_SESSION['sid']=session_id();
 	$_SESSION['name'] = $fname;
+	$_SESSION['username'] = $uid;
 	
 	$newdb = new DOMDocument();
 	$newdb->formatOutput = true;
